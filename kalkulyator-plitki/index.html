@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор плитки: сколько плиток и упаковок нужно на пол и стены</title>
+  <meta name="description" content="Рассчитайте количество плитки и упаковок для пола или стен с учётом подрезки и проёмов. Калькулятор показывает формулу расчёта - можно проверить вручную.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-plitki/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор плитки с показом формулы">
+  <meta property="og:description" content="Сколько плитки и упаковок нужно с учётом подрезки, проёмов и упаковки. Формула видна.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор плитки",
+        "url": "https://stroycalculyator.ru/kalkulyator-plitki/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор плитки" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько плитки нужно на ванную 2 × 2 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При высоте стен 2,7 м и одной двери 1,6 м² площадь облицовки около 20 м². Плитки 30 × 60 см понадобится примерно 123 штуки с запасом 10 % - это 16 упаковок по 8 штук."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли вычитать окна и двери при расчёте плитки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, проёмы не облицовываются, поэтому их площадь вычитают из площади стен. Но небольшой запас всё равно нужен: у проёмов много подрезки."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько плитки закладывать на подрезку?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для прямой укладки достаточно 5-10 %, для диагональной закладывайте 15 %, для сложного рисунка, мозаики и помещений с нишами - 15-20 %."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/" aria-current="page">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор плитки
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор плитки для пола и стен</h1>
+    <p class="lead">Посчитает, сколько плиток и упаковок нужно купить: с запасом на подрезку, с вычетом окон и дверей. Под результатом - формула с вашими числами.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество плитки</h2>
+    <p>Сначала находим площадь облицовки, затем делим её на площадь одной плитки и добавляем запас на подрезку:</p>
+    <ul>
+      <li><strong>Стены:</strong> площадь = периметр × высота - площадь окон и дверей.</li>
+      <li><strong>Пол:</strong> площадь = длина × ширина.</li>
+      <li><strong>Площадь плитки</strong> = длина × ширина в сантиметрах ÷ 10 000. Например, 30 × 60 см = 1 800 см² = 0,18 м².</li>
+      <li><strong>Количество:</strong> площадь облицовки ÷ площадь плитки × (1 + запас ÷ 100), округлённое вверх.</li>
+      <li><strong>Упаковки:</strong> количество плиток ÷ плиток в упаковке, округлённое вверх.</li>
+    </ul>
+
+    <h3>Пример: ванная 2 × 2 м</h3>
+    <p>Периметр 8 м, высота 2,7 м, одна дверь 0,8 × 2 м = 1,6 м². Площадь стен: 8 × 2,7 - 1,6 = 20 м². Плитка 30 × 60 см = 0,18 м²: 20 ÷ 0,18 = 111,1 плитки. С запасом 10 %: 111,1 × 1,1 = 122,2, округляем вверх - <strong>123 плитки</strong>. Если в упаковке 8 штук, понадобится 123 ÷ 8 = 15,4 → <strong>16 упаковок</strong> (128 плиток).</p>
+
+    <h2>Сколько плитки закладывать на подрезку</h2>
+    <p>Запас нужен не «на всякий случай», а потому что плитку режут у стен, углов, труб и проёмов. Чем сложнее геометрия, тем больше отходов:</p>
+    <ul>
+      <li><strong>5–10 %</strong> - прямая укладка в помещении простой формы.</li>
+      <li><strong>15 %</strong> - укладка по диагонали, крупноформатная плитка, санузел с несколькими трубами.</li>
+      <li><strong>15–20 %</strong> - «ёлочка», мозаика, сложный рисунок с подгонкой, много ниш и скосов.</li>
+    </ul>
+    <p>Плитку лучше покупать одной партии и одного калибра: оттенок и геометрия в разных партиях отличаются, и допокупить «в тон» через месяц может не получиться. Остаток 1–2 плитки полезно сохранить на случай скола или ремонта.</p>
+
+    <h2>Что калькулятор не учитывает</h2>
+    <ul>
+      <li>Затирку и клей - они считаются отдельно, по площади и размеру шва.</li>
+      <li>Пороги, уголки, плинтусы и декоративные элементы.</li>
+      <li>Раскладку с бордюрами и вставками, где плитки разных размеров смешиваются в одном ряду.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько плитки нужно на ванную 2 × 2 метра?</summary>
+        <p>При высоте стен 2,7 м и одной двери 1,6 м² площадь облицовки около 20 м². Плитки 30 × 60 см понадобится примерно 123 штуки с запасом 10 % - это 16 упаковок по 8 штук.</p>
+      </details>
+      <details>
+        <summary>Нужно ли вычитать окна и двери при расчёте плитки?</summary>
+        <p>Да, проёмы не облицовываются, поэтому их площадь вычитают из площади стен. Но небольшой запас всё равно нужен: у проёмов много подрезки.</p>
+      </details>
+      <details>
+        <summary>Сколько плитки закладывать на подрезку?</summary>
+        <p>Для прямой укладки достаточно 5-10 %, для диагональной закладывайте 15 %, для сложного рисунка, мозаики и помещений с нишами - 15–20 %.</p>
+      </details>
+      <details>
+        <summary>Почему получилось нецелое число плиток?</summary>
+        <p>Количество всегда округляется вверх: купить 111,1 плитки нельзя, а недобор в одну плитку означает возврат в магазин или остановку работы.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  function tileSize(v) {
+    if (v.razmer === 'custom') return [v.tw, v.th];
+    var parts = String(v.razmer).split('x');
+    return [parseFloat(parts[0]), parseFloat(parts[1])];
+  }
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт плитки',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'poverhnost', type: 'select', label: 'Что облицовываем', group: 'Размеры', value: 'steny', options: [
+        { v: 'steny', t: 'Стены' },
+        { v: 'pol', t: 'Пол' }
+      ]},
+      { key: 'perimetr', type: 'number', label: 'Периметр стен', unit: 'м', value: 8, step: 0.1, min: 0.1, group: 'Размеры',
+        hint: 'Сумма длин всех стен: например, 2 × (2,0 + 2,0) = 8 м',
+        showIf: function (v) { return v.poverhnost === 'steny'; } },
+      { key: 'vysota', type: 'number', label: 'Высота стен', unit: 'м', value: 2.7, step: 0.1, min: 0.1, group: 'Размеры',
+        showIf: function (v) { return v.poverhnost === 'steny'; } },
+      { key: 'proemy', type: 'number', label: 'Площадь окон и дверей', unit: 'м²', value: 0, step: 0.1, min: 0, group: 'Размеры',
+        hint: 'Необязательно. Дверь 0,8 × 2 м ≈ 1,6 м², окно 1,4 × 1,5 м ≈ 2,1 м²',
+        showIf: function (v) { return v.poverhnost === 'steny'; } },
+      { key: 'dlina', type: 'number', label: 'Длина помещения', unit: 'м', value: 2, step: 0.1, min: 0.1, group: 'Размеры',
+        showIf: function (v) { return v.poverhnost === 'pol'; } },
+      { key: 'shirina', type: 'number', label: 'Ширина помещения', unit: 'м', value: 2, step: 0.1, min: 0.1, group: 'Размеры',
+        showIf: function (v) { return v.poverhnost === 'pol'; } },
+
+      { key: 'razmer', type: 'select', label: 'Размер плитки', group: 'Плитка и запас', value: '30x60', options: [
+        { v: '10x10', t: '10 × 10 см' },
+        { v: '15x15', t: '15 × 15 см' },
+        { v: '20x20', t: '20 × 20 см' },
+        { v: '25x25', t: '25 × 25 см' },
+        { v: '30x30', t: '30 × 30 см' },
+        { v: '30x60', t: '30 × 60 см' },
+        { v: '20x60', t: '20 × 60 см' },
+        { v: '60x60', t: '60 × 60 см' },
+        { v: '60x120', t: '60 × 120 см' },
+        { v: 'custom', t: 'Другой размер' }
+      ]},
+      { key: 'tw', type: 'number', label: 'Длина плитки', unit: 'см', value: 30, step: 0.5, min: 0.5, group: 'Плитка и запас',
+        showIf: function (v) { return v.razmer === 'custom'; } },
+      { key: 'th', type: 'number', label: 'Ширина плитки', unit: 'см', value: 30, step: 0.5, min: 0.5, group: 'Плитка и запас',
+        showIf: function (v) { return v.razmer === 'custom'; } },
+      { key: 'zapas', type: 'select', label: 'Запас на подрезку', value: '10', group: 'Плитка и запас', hint: 'Прямая укладка - 10 %, по диагонали - 15–20 %', options: [
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 % (обычная укладка)' },
+        { v: '15', t: '15 % (диагональ)' },
+        { v: '20', t: '20 % (сложный рисунок)' }
+      ]},
+
+      { key: 'upt', type: 'number', label: 'Плиток в упаковке', unit: 'шт', value: 0, step: 1, min: 0,
+        group: 'Покупка (необязательно)', hint: 'Если известно. Оставьте 0, чтобы не считать упаковки.' },
+      { key: 'price_m2', type: 'number', label: 'Цена за м²', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'для расчёта стоимости (Необязательно)' },
+      { key: 'price_pack', type: 'number', label: 'Цена за упаковку', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: ' ' }
+    ],
+
+    compute: function (v) {
+      var area;
+
+      if (v.poverhnost === 'steny') {
+        if (v.perimetr <= 0 || v.vysota <= 0) {
+          return { error: 'Укажите периметр и высоту стен больше нуля.' };
+        }
+        area = v.perimetr * v.vysota - Math.max(0, v.proemy);
+      } else {
+        if (v.dlina <= 0 || v.shirina <= 0) {
+          return { error: 'Укажите длину и ширину помещения больше нуля.' };
+        }
+        area = v.dlina * v.shirina;
+      }
+
+      if (area <= 0) {
+        return { error: 'Площадь получилась нулевой: проёмы не могут быть больше площади стен.' };
+      }
+
+      var size = tileSize(v);
+      var tw = size[0], th = size[1];
+      if (!(tw > 0) || !(th > 0)) {
+        return { error: 'Укажите размеры плитки больше нуля.' };
+      }
+
+      var tileArea = tw * th / 10000;
+      var exact = area / tileArea;
+      var needed = C.ceil(exact * (1 + v.zapas / 100));
+
+      var rows = [];
+      rows.push({ label: 'Площадь облицовки', value: C.fmt(area, 1) + ' м²' });
+      rows.push({ label: 'Площадь одной плитки', value: C.fmt(tileArea, 3) + ' м²' });
+      rows.push({ label: 'Плиток без запаса', value: C.fmt(exact, 1) + ' шт' });
+
+      var main = {
+        label: 'Нужно плитки',
+        value: C.fmt(needed, 0) + ' шт',
+        sub: 'С запасом ' + v.zapas + ' % · площадь ' + C.fmt(needed * tileArea, 1) + ' м²'
+      };
+
+      var formula = [];
+      if (v.poverhnost === 'steny') {
+        formula.push('Площадь = ' + C.fmt(v.perimetr, 2) + ' × ' + C.fmt(v.vysota, 2) +
+          (v.proemy > 0 ? ' − ' + C.fmt(v.proemy, 2) : '') + ' = ' + C.fmt(area, 2) + ' м²');
+      } else {
+        formula.push('Площадь = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.shirina, 2) + ' = ' + C.fmt(area, 2) + ' м²');
+      }
+      formula.push('Плитка ' + C.fmt(tw, 1) + ' × ' + C.fmt(th, 1) + ' см = ' + C.fmt(tileArea, 4) + ' м²');
+      formula.push('Штук = ' + C.fmt(area, 2) + ' ÷ ' + C.fmt(tileArea, 4) +
+        ' × ' + C.fmt(1 + v.zapas / 100, 2) + ' = ' + C.fmt(exact * (1 + v.zapas / 100), 1) +
+        ' → ' + C.fmt(needed, 0) + ' шт');
+
+      var packs = 0;
+      if (v.upt > 0) {
+        packs = C.ceil(needed / v.upt);
+        var bought = packs * v.upt;
+        rows.push({ label: 'В упаковке', value: C.fmt(v.upt, 0) + ' шт' });
+        rows.push({ label: 'Упаковок', value: C.fmt(packs, 0) + ' шт', total: true });
+        rows.push({ label: 'Будет куплено', value: C.fmt(bought, 0) + ' шт (' + C.fmt(bought * tileArea, 1) + ' м²)' });
+        rows.push({ label: 'Останется в запасе', value: C.fmt(bought - needed, 0) + ' шт' });
+        main.value = C.fmt(packs, 0) + ' уп. (' + C.fmt(needed, 0) + ' шт)';
+        main.sub = 'В упаковке ' + C.fmt(v.upt, 0) + ' шт · всего ' + C.fmt(bought * tileArea, 1) + ' м²';
+        formula.push('Упаковок = ' + C.fmt(needed, 0) + ' ÷ ' + C.fmt(v.upt, 0) + ' = ' +
+          C.fmt(needed / v.upt, 2) + ' → ' + C.fmt(packs, 0) + ' уп.');
+      }
+
+      var cost = 0;
+      if (packs > 0 && v.price_pack > 0) {
+        cost = packs * v.price_pack;
+        formula.push('Стоимость = ' + C.fmt(packs, 0) + ' × ' + C.fmt(v.price_pack, 0) + ' = ' + C.money(cost));
+      } else if (v.price_m2 > 0) {
+        cost = needed * tileArea * v.price_m2;
+        formula.push('Стоимость = ' + C.fmt(needed * tileArea, 2) + ' м² × ' + C.fmt(v.price_m2, 0) + ' = ' + C.money(cost));
+      }
+      if (cost > 0) rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+
+      var notes = [];
+      if (v.zapas < 15) {
+        notes.push({ text: 'Если плитку будете укладывать по диагонали или в помещении много труб и ниш - увеличьте запас до 15–20 %.' });
+      }
+      if (v.upt > 0 && v.price_pack > 0 && v.price_m2 > 0) {
+        notes.push({ type: 'warn', text: 'Указаны обе цены - в стоимость взята цена за упаковку.' });
+      }
+
+      return { main: main, rows: rows, formula: formula, notes: notes };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

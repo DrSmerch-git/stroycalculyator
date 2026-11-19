@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор стяжки: сколько мешков пескобетона нужно на пол</title>
+  <meta name="description" content="Рассчитайте объём раствора и количество мешков пескобетона, ЦПС или наливного пола по площади и толщине слоя. Калькулятор показывает формулу.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-styazhki/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор стяжки и пескобетона">
+  <meta property="og:description" content="Мешки смеси и объём раствора на заданную толщину слоя.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор стяжки",
+        "url": "https://stroycalculyator.ru/kalkulyator-styazhki/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор стяжки" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько мешков пескобетона нужно на стяжку 20 м² толщиной 5 см?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При расходе 20 кг на 1 м² на 1 см слоя нужно 20 × 5 × 20 = 2000 кг смеси. Мешками по 40 кг это 50 мешков, с запасом 5 % - 53 мешка."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой расход у пескобетона М300?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ориентировочно 20 кг на 1 м² при слое 1 см, или 1,8-2 кг на 1 мм. Точный расход указан на мешке: у разных производителей он отличается из-за наполнителя."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужен ли запас смеси на неровности основания?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Бетонное основание редко бывает ровным, и в местах перепадов смесь уходит больше. Закладывайте 5-10 % сверх расчётного объёма."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/" aria-current="page">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор стяжки
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор стяжки и пескобетона</h1>
+    <p class="lead">Считает объём раствора, массу смеси и количество мешков по площади и толщине слоя. Подходит для пескобетона, ЦПС и наливных полов.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество смеси</h2>
+    <ul>
+      <li><strong>Объём раствора</strong> = площадь × толщина слоя (в метрах). Например, 12 м² × 0,05 м = 0,6 м³.</li>
+      <li><strong>Масса</strong> = площадь × толщина в сантиметрах × расход (кг на 1 м² на 1 см).</li>
+      <li><strong>Мешки</strong> = масса ÷ вес мешка, округлённое вверх.</li>
+    </ul>
+
+    <h3>Пример: комната 4 × 3 м, слой 5 см</h3>
+    <p>Площадь 12 м², объём 12 × 0,05 = 0,6 м³. Пескобетон М300 при 20 кг на 1 м² на 1 см: 12 × 5 × 20 = <strong>1200 кг</strong>. Мешками по 40 кг это 30 мешков; с запасом 5 % на неровности - <strong>32 мешка</strong>.</p>
+
+    <h2>Какой расход у разных смесей</h2>
+    <ul>
+      <li><strong>Пескобетон М300</strong> - около 20 кг на 1 м² при слое 1 см.</li>
+      <li><strong>ЦПС (цементно-песчаная смесь)</strong> - около 18 кг на 1 м² при слое 1 см.</li>
+      <li><strong>Наливной пол</strong> - расход указывают на 1 мм: обычно 1,4-1,8 кг/м². Для расчёта в этой форме умножьте на 10: 16 кг на 1 см.</li>
+      <li><strong>Гипсовая стяжка</strong> - легче, около 15 кг на 1 м² при слое 1 см.</li>
+    </ul>
+    <p>Расход на мешке конкретного производителя важнее любых таблиц: у смесей с керамзитовым или кварцевым наполнителем он ниже, у тяжёлых - выше.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Слой тоньше 3 см для цементной стяжки не рекомендуется - он растрескается.</li>
+      <li>Слой больше 5-6 см требует армирования сеткой, иначе появятся трещины.</li>
+      <li>Воду добавляют строго по инструкции: лишняя вода снижает прочность и даёт усадку.</li>
+      <li>Для перепадов больше 5 см иногда выгоднее полусухая стяжка с керамзитом, а не толстый слой пескобетона.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько мешков пескобетона нужно на стяжку 20 м² толщиной 5 см?</summary>
+        <p>При расходе 20 кг на 1 м² на 1 см слоя нужно 20 × 5 × 20 = 2000 кг смеси. Мешками по 40 кг это 50 мешков, с запасом 5 % - 53 мешка.</p>
+      </details>
+      <details>
+        <summary>Какой расход у пескобетона М300?</summary>
+        <p>Ориентировочно 20 кг на 1 м² при слое 1 см, или 1,8-2 кг на 1 мм. Точный расход указан на мешке: у разных производителей он отличается из-за наполнителя.</p>
+      </details>
+      <details>
+        <summary>Нужен ли запас смеси на неровности основания?</summary>
+        <p>Да. Бетонное основание редко бывает ровным, и в местах перепадов смесь уходит больше. Закладывайте 5-10 % сверх расчётного объёма.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт стяжки',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина помещения', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'shirina', type: 'number', label: 'Ширина помещения', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'tolshchina', type: 'number', label: 'Толщина слоя', unit: 'см', value: 5, step: 0.5, min: 0.2, group: 'Помещение',
+        hint: 'Для наливного пола обычно 0,3-1 см, для цементной стяжки - 3-7 см' },
+
+      { key: 'rashod', type: 'number', label: 'Расход смеси', unit: 'кг/м² на 1 см', value: 20, step: 0.5, min: 1, group: 'Смесь',
+        hint: 'Пескобетон М300 ≈ 20, ЦПС ≈ 18, гипсовая ≈ 15, наливной пол ≈ 16 (при 1,6 кг/м²·мм)' },
+      { key: 'meshok', type: 'select', label: 'Вес мешка', value: '40', group: 'Смесь', options: [
+        { v: '25', t: '25 кг' },
+        { v: '30', t: '30 кг' },
+        { v: '40', t: '40 кг' },
+        { v: '50', t: '50 кг' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас на неровности', value: '5', group: 'Смесь', options: [
+        { v: '0', t: 'Без запаса (ровное основание)' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 % (перепады больше 1 см)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за мешок', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'для расчёта стоимости (Необязательно)' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.shirina <= 0) return { error: 'Укажите длину и ширину помещения больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину слоя больше нуля.' };
+      if (v.rashod <= 0) return { error: 'Укажите расход смеси больше нуля.' };
+
+      var area = v.dlina * v.shirina;
+      var volume = area * v.tolshchina / 100;
+      var mass = area * v.tolshchina * v.rashod * (1 + v.zapas / 100);
+      var bagWeight = parseFloat(v.meshok);
+      var bags = C.ceil(mass / bagWeight);
+      var boughtKg = bags * bagWeight;
+
+      var rows = [
+        { label: 'Площадь пола', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Толщина слоя', value: C.fmt(v.tolshchina, 1) + ' см' },
+        { label: 'Объём раствора', value: C.fmt(volume, 2) + ' м³' },
+        { label: 'Масса смеси', value: C.fmt(mass, 0) + ' кг' },
+        { label: 'Мешков по ' + C.fmt(bagWeight, 0) + ' кг', value: C.fmt(bags, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(boughtKg, 0) + ' кг' }
+      ];
+
+      var formula = [
+        'Площадь = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.shirina, 2) + ' = ' + C.fmt(area, 2) + ' м²',
+        'Объём = ' + C.fmt(area, 2) + ' × ' + C.fmt(v.tolshchina / 100, 3) + ' = ' + C.fmt(volume, 2) + ' м³',
+        'Масса = ' + C.fmt(area, 2) + ' × ' + C.fmt(v.tolshchina, 1) + ' см × ' + C.fmt(v.rashod, 1) +
+          (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(mass, 0) + ' кг',
+        'Мешков = ' + C.fmt(mass, 0) + ' ÷ ' + C.fmt(bagWeight, 0) + ' = ' + C.fmt(mass / bagWeight, 2) +
+          ' → ' + C.fmt(bags, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = bags * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(bags, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.tolshchina < 3) {
+        notes.push({ type: 'warn', text: 'Цементная стяжка тоньше 3 см растрескивается. Такой слой допустим только для наливного пола или ремсостава.' });
+      }
+      if (v.tolshchina > 6) {
+        notes.push({ type: 'warn', text: 'Слой больше 6 см требует армирования сеткой, иначе появятся трещины. При больших перепадах иногда выгоднее керамзитовая подсыпка.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса смесь может закончиться в самом конце - на неровностях основания расход обычно больше расчётного.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно смеси',
+          value: C.fmt(bags, 0) + ' ' + C.plural(bags, 'мешок', 'мешка', 'мешков'),
+          sub: C.fmt(mass, 0) + ' кг · объём ' + C.fmt(volume, 2) + ' м³'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+# Служебные файлы ОС и редакторов
+.DS_Store
+Thumbs.db
+desktop.ini
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Временные файлы и резервные копии
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+*.log
+~$*
+._*
+
+# Черновики: всё, что попадёт в репозиторий, сразу станет доступно на сайте
+drafts/
+черновики/
+*.draft.html
+*.wip.html
+
+# Локальные артефакты работы (скриншоты, замеры, отчёты)
+browser-screenshots/
+_shots/
+*.psd
+*.sketch
+
+# Если когда-нибудь появится сборка
+node_modules/
+dist/
+.cache/
+.parcel-cache/
+
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+secrets.*
+
+# Служебные файлы DSH
+.dsh/

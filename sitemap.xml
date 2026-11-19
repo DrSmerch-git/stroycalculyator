@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Только адреса страниц.
+
+  priority и changefreq не указаны осознанно: Google их игнорирует, Яндекс
+  использует priority лишь для очерёдности обхода (при десятке страниц это
+  не имеет значения). lastmod тоже не указан: GitHub Pages отдаёт на каждый
+  файл заголовок Last-Modified, который всегда соответствует реальной дате
+  изменения файла. Дублировать его вручную - значит рисковать ошибкой.
+
+  При добавлении новой страницы достаточно добавить блок <url> с её адресом.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://stroycalculyator.ru/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-plitki/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-laminata/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-oboev/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-kraski/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-styazhki/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/kalkulyator-gipsokartona/</loc>
+  </url>
+  <url>
+    <loc>https://stroycalculyator.ru/politika-konfidencialnosti/</loc>
+  </url>
+</urlset>

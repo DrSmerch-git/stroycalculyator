@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 1
+Sitemap: https://stroycalculyator.ru/sitemap.xml

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор краски: сколько литров и банок нужно на стены и потолок</title>
+  <meta name="description" content="Рассчитайте расход краски по площади стен или потолка, числу слоёв и расходу с банки. Калькулятор покажет литры, количество банок и стоимость.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-kraski/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор краски с показом формулы">
+  <meta property="og:description" content="Литры и банки на нужное число слоёв - для стен и потолка.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор краски",
+        "url": "https://stroycalculyator.ru/kalkulyator-kraski/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор краски" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько краски нужно на комнату 4 × 3 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для стен при потолке 2,7 м и одной двери с окном площадь окраски около 34 м². В два слоя при расходе 0,15 л/м² понадобится около 10,2 л краски - это 5 банок по 2,5 л."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужна ли грунтовка перед покраской?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Грунтовка уменьшает расход краски и улучшает сцепление, особенно на пористых основаниях: гипсокартоне, штукатурке, старых обоях. На негрунтованной стене расход краски может вырасти на 10–20 %."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько слоёв краски нужно наносить?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Обычно два слоя. Один слой допустим только при освежении цвета на светлом основании. При переходе с тёмного цвета на светлый или при яркой колеровке может понадобиться три слоя."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/" aria-current="page">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор краски
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор краски для стен и потолка</h1>
+    <p class="lead">Считает литры и банки по площади, числу слоёв и расходу, указанному на вашей банке. Площадь берётся за вычетом окон и дверей.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается расход краски</h2>
+    <ul>
+      <li><strong>Площадь стен</strong> = периметр × высота - площадь окон и дверей.</li>
+      <li><strong>Площадь потолка</strong> = длина × ширина комнаты.</li>
+      <li><strong>Литры</strong> = площадь × число слоёв × расход краски (л/м²).</li>
+      <li><strong>Банки</strong> = литры ÷ объём банки, округлённое вверх.</li>
+    </ul>
+
+    <h3>Пример: стены в комнате 4 × 3 м</h3>
+    <p>Периметр 14 м, потолок 2,7 м: 14 × 2,7 = 37,8 м². Вычитаем дверь 1,6 м² и окно 2,1 м² - остаётся 34,1 м². В два слоя при расходе 0,15 л/м²: 34,1 × 2 × 0,15 = <strong>10,2 л</strong>. Банками по 2,5 л это 4,1 → <strong>5 банок</strong>.</p>
+
+    <h2>Какой расход указывать</h2>
+    <p>Расход пишут на банке - обычно в виде «1 л на 8–10 м²». Перевести в литры на метр просто: если 1 л хватает на 10 м², это 0,1 л/м²; если на 8 м² - 0,125 л/м².</p>
+    <ul>
+      <li><strong>Водоэмульсионная и акриловая</strong> - обычно 0,1-0,2 л/м² на слой.</li>
+      <li><strong>Эмаль и масляная краска</strong> - 0,08-0,15 л/м² на слой.</li>
+      <li><strong>Фактурная и рельефная</strong> - 0,3-0,5 л/м² и больше, зависит от зерна.</li>
+    </ul>
+    <p>Пористые основания (штукатурка, гипсокартон без грунтовки, старое дерево) впитывают больше: закладывайте на 10-15 % больше расчётного.</p>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько краски нужно на комнату 4 × 3 метра?</summary>
+        <p>Для стен при потолке 2,7 м и одной двери с окном площадь окраски около 34 м². В два слоя при расходе 0,15 л/м² понадобится около 10,2 л краски - это 5 банок по 2,5 л.</p>
+      </details>
+      <details>
+        <summary>Нужна ли грунтовка перед покраской?</summary>
+        <p>Грунтовка уменьшает расход краски и улучшает сцепление, особенно на пористых основаниях: гипсокартоне, штукатурке, старых обоях. На негрунтованной стене расход краски может вырасти на 10-20 %.</p>
+      </details>
+      <details>
+        <summary>Сколько слоёв краски нужно наносить?</summary>
+        <p>Обычно два слоя. Один слой допустим только при освежении цвета на светлом основании. При переходе с тёмного цвета на светлый или при яркой колеровке может понадобиться три слоя.</p>
+      </details>
+      <details>
+        <summary>Почему банок получается с запасом?</summary>
+        <p>Краска продаётся целыми банками, а остаток нужен на подкрас после высыхания: краска светлеет и на стыках заметны переходы. Небольшой запас в 200-300 мл обычно полезен.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  function jarVolume(v) {
+    return v.obem === 'custom' ? v.obem_custom : parseFloat(v.obem);
+  }
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт краски',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'rezhim', type: 'select', label: 'Что красим', group: 'Поверхность', value: 'steny', options: [
+        { v: 'steny', t: 'Стены (по периметру)' },
+        { v: 'potolok', t: 'Потолок' },
+        { v: 'vruchnuyu', t: 'Другая площадь (введу вручную)' }
+      ]},
+      { key: 'dlina', type: 'number', label: 'Длина комнаты', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Поверхность',
+        showIf: function (v) { return v.rezhim !== 'vruchnuyu'; } },
+      { key: 'shirina', type: 'number', label: 'Ширина комнаты', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Поверхность',
+        showIf: function (v) { return v.rezhim !== 'vruchnuyu'; } },
+      { key: 'vysota', type: 'number', label: 'Высота стен', unit: 'м', value: 2.7, step: 0.05, min: 0.5, group: 'Поверхность',
+        showIf: function (v) { return v.rezhim === 'steny'; } },
+      { key: 'proemy', type: 'number', label: 'Площадь окон и дверей', unit: 'м²', value: 3.7, step: 0.1, min: 0, group: 'Поверхность',
+        hint: 'Дверь 0,8 × 2 м ≈ 1,6 м², окно 1,4 × 1,5 м ≈ 2,1 м²',
+        showIf: function (v) { return v.rezhim === 'steny'; } },
+      { key: 'ploshad', type: 'number', label: 'Площадь окраски', unit: 'м²', value: 30, step: 0.5, min: 0.5, group: 'Поверхность',
+        showIf: function (v) { return v.rezhim === 'vruchnuyu'; } },
+
+      { key: 'rashod', type: 'number', label: 'Расход краски', unit: 'л/м²', value: 0.15, step: 0.01, min: 0.02, group: 'Краска',
+        hint: 'Смотрите на банке: «1 л на 10 м²» - это 0,1 л/м², «1 л на 8 м²» - 0,125 л/м²' },
+      { key: 'sloev', type: 'select', label: 'Слоёв', value: '2', group: 'Краска', options: [
+        { v: '1', t: '1 слой (освежение цвета)' },
+        { v: '2', t: '2 слоя (обычно)' },
+        { v: '3', t: '3 слоя (тёмное основание)' }
+      ]},
+      { key: 'obem', type: 'select', label: 'Объём банки', value: '2.5', group: 'Краска', options: [
+        { v: '0.9', t: '0,9 л' },
+        { v: '1.9', t: '1,9 л' },
+        { v: '2.5', t: '2,5 л' },
+        { v: '4.5', t: '4,5 л' },
+        { v: '9', t: '9 л' },
+        { v: 'custom', t: 'Другой объём' }
+      ]},
+      { key: 'obem_custom', type: 'number', label: 'Объём банки', unit: 'л', value: 10, step: 0.1, min: 0.1, group: 'Краска',
+        showIf: function (v) { return v.obem === 'custom'; } },
+
+      { key: 'price', type: 'number', label: 'Цена за банку', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'для расчёта стоимости (Необязательно)' }
+    ],
+
+    compute: function (v) {
+      var area;
+
+      if (v.rezhim === 'vruchnuyu') {
+        area = v.ploshad;
+        if (!(area > 0)) return { error: 'Укажите площадь окраски больше нуля.' };
+      } else if (v.rezhim === 'potolok') {
+        if (v.dlina <= 0 || v.shirina <= 0) return { error: 'Укажите длину и ширину комнаты больше нуля.' };
+        area = v.dlina * v.shirina;
+      } else {
+        if (v.dlina <= 0 || v.shirina <= 0 || v.vysota <= 0) {
+          return { error: 'Укажите длину, ширину и высоту стен больше нуля.' };
+        }
+        var perimeter = 2 * (v.dlina + v.shirina);
+        area = perimeter * v.vysota - Math.max(0, v.proemy);
+        if (area <= 0) return { error: 'Проёмы не могут быть больше площади стен.' };
+      }
+
+      if (!(v.rashod > 0)) return { error: 'Укажите расход краски больше нуля (л/м²).' };
+      var vol = jarVolume(v);
+      if (!(vol > 0)) return { error: 'Укажите объём банки больше нуля.' };
+
+      var litres = area * Number(v.sloev) * v.rashod;
+      var jars = C.ceil(litres / vol);
+      var bought = jars * vol;
+
+      var rows = [
+        { label: 'Площадь окраски', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Слоёв', value: v.sloev + ' ' + C.plural(Number(v.sloev), 'слой', 'слоя', 'слоёв') },
+        { label: 'Расход', value: C.fmt(v.rashod, 2) + ' л/м² на слой' },
+        { label: 'Нужно краски', value: C.fmt(litres, 2) + ' л' },
+        { label: 'Банок по ' + C.fmt(vol, 1) + ' л', value: C.fmt(jars, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(bought, 2) + ' л' },
+        { label: 'Останется', value: C.fmt(bought - litres, 2) + ' л' }
+      ];
+
+      var formula = [];
+      if (v.rezhim === 'steny') {
+        var per = 2 * (v.dlina + v.shirina);
+        formula.push('Периметр = 2 × (' + C.fmt(v.dlina, 2) + ' + ' + C.fmt(v.shirina, 2) + ') = ' + C.fmt(per, 2) + ' м');
+        formula.push('Площадь = ' + C.fmt(per, 2) + ' × ' + C.fmt(v.vysota, 2) +
+          (v.proemy > 0 ? ' − ' + C.fmt(v.proemy, 2) : '') + ' = ' + C.fmt(area, 2) + ' м²');
+      } else if (v.rezhim === 'potolok') {
+        formula.push('Площадь = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.shirina, 2) + ' = ' + C.fmt(area, 2) + ' м²');
+      } else {
+        formula.push('Площадь = ' + C.fmt(area, 2) + ' м² (введена вручную)');
+      }
+      formula.push('Литры = ' + C.fmt(area, 2) + ' × ' + v.sloev + ' × ' + C.fmt(v.rashod, 2) +
+        ' = ' + C.fmt(litres, 2) + ' л');
+      formula.push('Банок = ' + C.fmt(litres, 2) + ' ÷ ' + C.fmt(vol, 1) + ' = ' + C.fmt(litres / vol, 2) +
+        ' → ' + C.fmt(jars, 0) + ' шт');
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = jars * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(jars, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      notes.push({ text: 'Пористые основания - штукатурка, гипсокартон без грунтовки, дерево - впитывают на 10-15 % больше. Добавьте этот запас, если не грунтуете.' });
+      if (Number(v.sloev) === 1) {
+        notes.push({ type: 'warn', text: 'Один слой подходит только для освежения цвета на светлом основании. Для равномерного укрытия обычно нужно два.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно краски',
+          value: C.fmt(jars, 0) + ' ' + C.plural(jars, 'банка', 'банки', 'банок') + ' (' + C.fmt(bought, 1) + ' л)',
+          sub: 'Площадь ' + C.fmt(area, 2) + ' м² · ' + v.sloev + ' ' + C.plural(Number(v.sloev), 'слой', 'слоя', 'слоёв')
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

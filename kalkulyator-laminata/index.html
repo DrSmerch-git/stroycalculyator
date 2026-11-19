@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор ламината: сколько упаковок и ламелей нужно на комнату</title>
+  <meta name="description" content="Рассчитайте количество ламината или паркетной доски: ламели, упаковки и квадратные метры с запасом на подрезку. Калькулятор показывает формулу расчёта.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-laminata/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор ламината с показом формулы">
+  <meta property="og:description" content="Ламели, упаковки и метры с запасом под схему укладки - и формула под результатом.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор ламината",
+        "url": "https://stroycalculyator.ru/kalkulyator-laminata/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор ламината" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько упаковок ламината нужно на комнату 18 м²?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При прямой укладке и запасе 5 % нужно около 18,9 м² ламината. Если в упаковке 2,13 м², понадобится 9 упаковок: 8 упаковок дают только 17 м², этого не хватит."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой запас ламината нужен при диагональной укладке?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для диагональной укладки закладывайте 10-15 %, для «ёлочки» - 15-20 %. При прямой укладке вдоль стены достаточно 5 %."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужна ли подложка под ламинат и в каком количестве?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Подложка нужна почти всегда. Её считают по площади пола без запаса на подрезку, потому что она стелется целыми полосами с нахлёстом 5 см, на небольшой запас всё равно стоит заложить 5 %."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/" aria-current="page">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор ламината
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор ламината и паркетной доски</h1>
+    <p class="lead">Считает ламели и упаковки по размеру доски и схеме укладки. Показывает, сколько метров придётся купить на самом деле - вместе с отходами на подрезку.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается ламинат</h2>
+    <ul>
+      <li><strong>Площадь пола</strong> = длина комнаты × ширина.</li>
+      <li><strong>Площадь ламели</strong> = длина × ширина доски. Например, 1380 × 193 мм = 0,266 м².</li>
+      <li><strong>Количество ламелей</strong> = площадь пола ÷ площадь ламели × (1 + запас), округлённое вверх.</li>
+      <li><strong>Упаковки</strong> = ламели ÷ штук в упаковке, округлённое вверх.</li>
+    </ul>
+    <p>Чтобы не считать вручную: вбейте размеры комнаты и данные с упаковки - расчёт обновится сам.</p>
+
+    <h3>Пример: комната 4,5 × 4 м</h3>
+    <p>Площадь 18 м². Ламель 1380 × 193 мм - 0,266 м², значит нужно 18 ÷ 0,266 = 67,7 ламели. С запасом 5 % это 71,1 → <strong>72 ламели</strong>. При 8 штуках в упаковке: 72 ÷ 8 = 9 упаковок. Итоговая площадь к покупке - 9 × 8 × 0,266 = <strong>19,2 м²</strong>, то есть переплата за 1,2 м² сверх площади пола - это и есть неизбежные отходы на подрезку.</p>
+
+    <h2>Какой запас закладывать</h2>
+    <ul>
+      <li><strong>5 %</strong> - прямая укладка вдоль длинной стены в комнате простой формы.</li>
+      <li><strong>10–15 %</strong> - диагональная укладка, комната с нишами и выступами, много стыков у дверных проёмов.</li>
+      <li><strong>15–20 %</strong> - «ёлочка», французская укладка, доска с выраженным рисунком, который нужно стыковать.</li>
+    </ul>
+    <p>Ламинат из одной партии может отличаться оттенком от следующей - поэтому запас лучше делать сразу, а не докупать потом.</p>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько упаковок ламината нужно на комнату 18 м²?</summary>
+        <p>При прямой укладке и запасе 5 % нужно около 18,9 м² ламината. Если в упаковке 2,13 м², понадобится 9 упаковок: 8 упаковок дают только 17 м², этого не хватит.</p>
+      </details>
+      <details>
+        <summary>Какой запас ламината нужен при диагональной укладке?</summary>
+        <p>Для диагональной укладки закладывайте 10–15 %, для «ёлочки» - 15-20 %. При прямой укладке вдоль стены достаточно 5 %.</p>
+      </details>
+      <details>
+        <summary>Нужна ли подложка под ламинат и в каком количестве?</summary>
+        <p>Подложка нужна почти всегда. Её считают по площади пола без запаса на подрезку, потому что она стелется целыми полосами с нахлёстом 5 см - на небольшой запас всё равно стоит заложить 5 %.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  function boardSize(v) {
+    if (v.razmer === 'custom') return [v.lw, v.lh];
+    var parts = String(v.razmer).split('x');
+    return [parseFloat(parts[0]), parseFloat(parts[1])];
+  }
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт ламината',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина комнаты', unit: 'м', value: 4.5, step: 0.1, min: 0.1, group: 'Размеры' },
+      { key: 'shirina', type: 'number', label: 'Ширина комнаты', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Размеры' },
+
+      { key: 'razmer', type: 'select', label: 'Размер ламели', group: 'Материал', value: '1380x193', options: [
+        { v: '1380x193', t: '1380 × 193 мм (8 класс, 8 шт)' },
+        { v: '1285x192', t: '1285 × 192 мм' },
+        { v: '1210x190', t: '1210 × 190 мм' },
+        { v: '600x300', t: '600 × 300 мм (для «ёлочки»)' },
+        { v: 'custom', t: 'Другой размер' }
+      ]},
+      { key: 'lw', type: 'number', label: 'Длина ламели', unit: 'мм', value: 1380, step: 10, min: 50, group: 'Материал',
+        showIf: function (v) { return v.razmer === 'custom'; } },
+      { key: 'lh', type: 'number', label: 'Ширина ламели', unit: 'мм', value: 193, step: 5, min: 50, group: 'Материал',
+        showIf: function (v) { return v.razmer === 'custom'; } },
+      { key: 'sht', type: 'number', label: 'Ламелей в упаковке', unit: 'шт', value: 8, step: 1, min: 1, group: 'Материал',
+        hint: 'Указано на упаковке' },
+      { key: 'zapas', type: 'select', label: 'Запас на подрезку', value: '5', group: 'Материал',
+        hint: 'Прямая укладка - 5 %, диагональ - 10-15 %, «ёлочка» - 15-20 %', options: [
+          { v: '5', t: '5 % (прямая укладка)' },
+          { v: '10', t: '10 % (диагональ)' },
+          { v: '15', t: '15 % («ёлочка», сложная комната)' },
+          { v: '20', t: '20 % (сложный рисунок)' }
+        ]},
+
+      { key: 'price_m2', type: 'number', label: 'Цена за м²', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'для расчёта стоимости (Необязательно)' },
+      { key: 'price_pack', type: 'number', label: 'Цена за упаковку', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: ' ' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.shirina <= 0) {
+        return { error: 'Укажите длину и ширину комнаты больше нуля.' };
+      }
+      if (v.sht <= 0) {
+        return { error: 'Укажите количество ламелей в упаковке (минимум 1).' };
+      }
+
+      var size = boardSize(v);
+      var lw = size[0], lh = size[1];
+      if (!(lw > 0) || !(lh > 0)) {
+        return { error: 'Укажите размеры ламели больше нуля.' };
+      }
+
+      var area = v.dlina * v.shirina;
+      var boardArea = lw * lh / 1000000;
+      var exact = area / boardArea;
+      var needed = C.ceil(exact * (1 + v.zapas / 100));
+      var packs = C.ceil(needed / v.sht);
+      var boards = packs * v.sht;
+      var buyArea = boards * boardArea;
+
+      var rows = [
+        { label: 'Площадь пола', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Площадь ламели', value: C.fmt(boardArea, 3) + ' м²' },
+        { label: 'Ламелей без запаса', value: C.fmt(exact, 1) + ' шт' },
+        { label: 'Ламелей с запасом', value: C.fmt(needed, 0) + ' шт' },
+        { label: 'Упаковок', value: C.fmt(packs, 0) + ' шт', total: true },
+        { label: 'Площадь к покупке', value: C.fmt(buyArea, 2) + ' м²' },
+        { label: 'Отходы на подрезку', value: C.fmt(buyArea - area, 2) + ' м²' },
+        { label: 'Подложка (ориентировочно)', value: C.fmt(area * 1.05, 1) + ' м²' }
+      ];
+
+      var formula = [
+        'Площадь пола = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.shirina, 2) + ' = ' + C.fmt(area, 2) + ' м²',
+        'Ламель ' + C.fmt(lw, 0) + ' × ' + C.fmt(lh, 0) + ' мм = ' + C.fmt(boardArea, 4) + ' м²',
+        'Ламелей = ' + C.fmt(area, 2) + ' ÷ ' + C.fmt(boardArea, 4) + ' × ' + C.fmt(1 + v.zapas / 100, 2) +
+          ' = ' + C.fmt(exact * (1 + v.zapas / 100), 1) + ' → ' + C.fmt(needed, 0) + ' шт',
+        'Упаковок = ' + C.fmt(needed, 0) + ' ÷ ' + C.fmt(v.sht, 0) + ' = ' + C.fmt(needed / v.sht, 2) +
+          ' → ' + C.fmt(packs, 0) + ' уп.'
+      ];
+
+      var cost = 0;
+      if (v.price_pack > 0) {
+        cost = packs * v.price_pack;
+        formula.push('Стоимость = ' + C.fmt(packs, 0) + ' × ' + C.fmt(v.price_pack, 0) + ' = ' + C.money(cost));
+      } else if (v.price_m2 > 0) {
+        cost = buyArea * v.price_m2;
+        formula.push('Стоимость = ' + C.fmt(buyArea, 2) + ' м² × ' + C.fmt(v.price_m2, 0) + ' = ' + C.money(cost));
+      }
+      if (cost > 0) rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+
+      var notes = [];
+      if (v.zapas < 10) {
+        notes.push({ text: 'Если планируете диагональную укладку или комната не прямоугольная - поставьте запас 10–15 %.' });
+      }
+      if (needed / v.sht > 1 && (packs * v.sht - needed) >= v.sht) {
+        notes.push({ text: 'Из-за округления до целых упаковок останется почти целая упаковка - её стоит сохранить.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно ламината',
+          value: C.fmt(packs, 0) + ' уп. (' + C.fmt(needed, 0) + ' шт.)',
+          sub: 'Площадь к покупке ' + C.fmt(buyArea, 2) + ' м² · пол ' + C.fmt(area, 2) + ' м²'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

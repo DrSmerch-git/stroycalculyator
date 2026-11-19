@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор обоев: сколько рулонов нужно на комнату</title>
+  <meta name="description" content="Рассчитайте количество рулонов обоев по периметру комнаты, с учётом высоты потолка, подгонки рисунка (раппорта) и проёмов. Формула расчёта видна.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-oboev/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор обоев с показом формулы">
+  <meta property="og:description" content="Сколько рулонов нужно на комнату - по полосам, с подгонкой рисунка и проёмами.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор обоев",
+        "url": "https://stroycalculyator.ru/kalkulyator-oboev/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор обоев" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько рулонов обоев нужно на комнату 4 × 3 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При потолках 2,7 м, одной двери и обоях 0,53 × 10 м без подгонки рисунка нужно около 9 рулонов. Из рулона при такой высоте получается 3 полосы, а всего на периметр уходит 25 полос."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как учитывается раппорт обоев?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Раппорт - это шаг рисунка. При подгонке к высоте стены добавляется длина раппорта, поэтому из рулона получается меньше полос. Для обоев с раппортом 32 см и потолком 2,7 м длина полосы составит примерно 3,1 м."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли вычитать окна и двери при расчёте обоев?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, из периметра вычитают суммарную ширину проёмов. Но вычитать их полностью не стоит: над дверью и под окном всё равно есть полосы, а у проёмов много подрезки."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/" aria-current="page">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор обоев
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор обоев</h1>
+    <p class="lead">Считает рулоны по полосам, а не «по площади» -  из рулона при высоком потолке получается всего 2-3 полосы. Раппорт и проёмы учитываются.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество обоев</h2>
+    <p>Обои считают полосами, а не квадратными метрами. Порядок такой:</p>
+    <ul>
+      <li><strong>Периметр</strong> = 2 × (длина + ширина комнаты), минус ширина окон и дверей.</li>
+      <li><strong>Полос всего</strong> = периметр ÷ ширина рулона, округлённое вверх.</li>
+      <li><strong>Длина одной полосы</strong> = высота потолка + раппорт + припуск на подрезку (5 см). Раппорт добавляется, потому что рисунок нужно стыковать.</li>
+      <li><strong>Полос из рулона</strong> = длина рулона ÷ длина полосы, округлённое вниз.</li>
+      <li><strong>Рулонов</strong> = полос всего ÷ полос из рулона, округлённое вверх.</li>
+    </ul>
+
+    <h3>Пример: комната 4 × 3 м, потолки 2,7 м</h3>
+    <p>Периметр 14 м, вычитаем дверь 0,9 м - остаётся 13,1 м. Обои 0,53 × 10 м: полос нужно 13,1 ÷ 0,53 = 24,7 → <strong>25 полос</strong>. Полоса с припуском: 2,7 + 0,05 = 2,75 м. Из рулона выходит 10 ÷ 2,75 = 3,6 → <strong>3 полосы</strong>. Итого 25 ÷ 3 = 8,3 → <strong>9 рулонов</strong>.</p>
+    <p>Обратите внимание: 9 рулонов на комнату 12 м² - это нормально. Если считать «по площади» (12 м² ÷ 5,3 м² в рулоне = 2,3 рулона), получится втрое меньше, и обоев не хватит.</p>
+
+    <h2>Что влияет на результат</h2>
+    <ul>
+      <li><strong>Высота потолка.</strong> Чем выше стены, тем меньше полос в рулоне. Разница между 2,5 и 3 м - почти целый рулон.</li>
+      <li><strong>Раппорт.</strong> Крупный рисунок (32-64 см) заметно увеличивает расход: обрезки от подгонки не используются.</li>
+      <li><strong>Окна и двери.</strong> Вычитается только ширина, потому что над проёмами обычно остаётся полоса.</li>
+      <li><strong>Углы и розетки.</strong> Если комната с выступами или нишами, добавьте один рулон про запас.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько рулонов обоев нужно на комнату 4 × 3 метра?</summary>
+        <p>При потолках 2,7 м, одной двери и обоях 0,53 × 10 м без подгонки рисунка нужно около 9 рулонов. Из рулона при такой высоте получается 3 полосы, а всего на периметр уходит 25 полос.</p>
+      </details>
+      <details>
+        <summary>Как учитывается раппорт обоев?</summary>
+        <p>Раппорт - это шаг рисунка. При подгонке к высоте стены добавляется длина раппорта, поэтому из рулона получается меньше полос. Для обоев с раппортом 32 см и потолком 2,7 м длина полосы составит примерно 3,1 м.</p>
+      </details>
+      <details>
+        <summary>Нужно ли вычитать окна и двери при расчёте обоев?</summary>
+        <p>Да, из периметра вычитают суммарную ширину проёмов. Но вычитать их полностью не стоит: над дверью и под окном всё равно есть полосы, а у проёмов много подрезки.</p>
+      </details>
+      <details>
+        <summary>Куда девать остатки обоев?</summary>
+        <p>Оставьте один рулон или хотя бы несколько полос: ими можно заменить повреждённый участок через год, когда докупить обои той же партии будет невозможно.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  function rollWidth(v) {
+    return v.shirina === 'custom' ? v.sw : parseFloat(v.shirina);
+  }
+  function rollLength(v) {
+    return v.dlina === 'custom' ? v.sl : parseFloat(v.dlina);
+  }
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт обоев',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina_komnaty', type: 'number', label: 'Длина комнаты', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Комната' },
+      { key: 'shirina_komnaty', type: 'number', label: 'Ширина комнаты', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Комната' },
+      { key: 'vysota', type: 'number', label: 'Высота потолка', unit: 'м', value: 2.7, step: 0.05, min: 0.5, group: 'Комната' },
+      { key: 'proemy', type: 'number', label: 'Суммарная ширина проёмов', unit: 'м', value: 0.9, step: 0.1, min: 0, group: 'Комната',
+        hint: 'Дверь ≈ 0,9 м, окно ≈ 1,4 м. Если не вычитать - поставьте 0' },
+
+      { key: 'shirina', type: 'select', label: 'Ширина рулона', group: 'Обои', value: '0.53', options: [
+        { v: '0.53', t: '0,53 м (стандарт)' },
+        { v: '1.06', t: '1,06 м (широкие)' },
+        { v: 'custom', t: 'Другая ширина' }
+      ]},
+      { key: 'sw', type: 'number', label: 'Ширина рулона', unit: 'м', value: 0.53, step: 0.01, min: 0.1, group: 'Обои',
+        showIf: function (v) { return v.shirina === 'custom'; } },
+      { key: 'dlina', type: 'select', label: 'Длина рулона', group: 'Обои', value: '10', options: [
+        { v: '10', t: '10 м' },
+        { v: '15', t: '15 м' },
+        { v: '25', t: '25 м' },
+        { v: 'custom', t: 'Другая длина' }
+      ]},
+      { key: 'sl', type: 'number', label: 'Длина рулона', unit: 'м', value: 10.05, step: 0.05, min: 1, group: 'Обои',
+        showIf: function (v) { return v.dlina === 'custom'; } },
+      { key: 'rapport', type: 'number', label: 'Раппорт (шаг рисунка)', unit: 'см', value: 0, step: 1, min: 0, group: 'Обои',
+        hint: 'Есть в описании обоев. 0 - однотонные или без подгонки' },
+      { key: 'pripusk', type: 'number', label: 'Припуск на подрезку', unit: 'см', value: 5, step: 1, min: 0, group: 'Обои',
+        hint: 'Обычно 5-10 см: полосы подрезаются по месту сверху и снизу' },
+
+      { key: 'price_roll', type: 'number', label: 'Цена за рулон', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'для расчёта стоимости (Необязательно)' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina_komnaty <= 0 || v.shirina_komnaty <= 0) {
+        return { error: 'Укажите длину и ширину комнаты больше нуля.' };
+      }
+      if (v.vysota <= 0) {
+        return { error: 'Укажите высоту потолка больше нуля.' };
+      }
+
+      var w = rollWidth(v);
+      var L = rollLength(v);
+      if (!(w > 0.1) || !(L > 1)) {
+        return { error: 'Проверьте ширину и длину рулона.' };
+      }
+
+      var perimeter = 2 * (v.dlina_komnaty + v.shirina_komnaty);
+      var eff = perimeter - Math.max(0, v.proemy);
+      if (eff < 0.5) {
+        return { error: 'Проёмы занимают почти весь периметр - проверьте значения.' };
+      }
+
+      var strips = C.ceil(eff / w);
+      var stripLen = v.vysota + v.rapport / 100 + v.pripusk / 100;
+      var perRoll = Math.floor((L + 1e-9) / stripLen);
+      if (perRoll < 1) {
+        return { error: 'Из одного рулона не выходит ни одной целой полосы: рулон короче высоты стены с припуском.' };
+      }
+      var rolls = C.ceil(strips / perRoll);
+
+      var rows = [
+        { label: 'Периметр комнаты', value: C.fmt(perimeter, 2) + ' м' },
+        { label: 'Оклеиваемая ширина', value: C.fmt(eff, 2) + ' м' },
+        { label: 'Ширина рулона', value: C.fmt(w, 2) + ' м' },
+        { label: 'Полос всего', value: C.fmt(strips, 0) + ' шт' },
+        { label: 'Длина одной полосы', value: C.fmt(stripLen, 2) + ' м' },
+        { label: 'Полос из рулона', value: C.fmt(perRoll, 0) + ' шт' },
+        { label: 'Рулонов', value: C.fmt(rolls, 0) + ' шт', total: true }
+      ];
+
+      var formula = [
+        'Периметр = 2 × (' + C.fmt(v.dlina_komnaty, 2) + ' + ' + C.fmt(v.shirina_komnaty, 2) + ') = ' + C.fmt(perimeter, 2) + ' м',
+        'Оклеиваемая ширина = ' + C.fmt(perimeter, 2) + (v.proemy > 0 ? ' − ' + C.fmt(v.proemy, 2) : '') + ' = ' + C.fmt(eff, 2) + ' м',
+        'Полос = ' + C.fmt(eff, 2) + ' ÷ ' + C.fmt(w, 2) + ' = ' + C.fmt(eff / w, 2) + ' → ' + C.fmt(strips, 0) + ' шт',
+        'Полоса = ' + C.fmt(v.vysota, 2) + (v.rapport > 0 ? ' + ' + C.fmt(v.rapport / 100, 2) : '') +
+          ' + ' + C.fmt(v.pripusk / 100, 2) + ' = ' + C.fmt(stripLen, 2) + ' м',
+        'Полос из рулона = ' + C.fmt(L, 2) + ' ÷ ' + C.fmt(stripLen, 2) + ' = ' + C.fmt(L / stripLen, 2) +
+          ' → ' + C.fmt(perRoll, 0) + ' шт (округляем вниз)',
+        'Рулонов = ' + C.fmt(strips, 0) + ' ÷ ' + C.fmt(perRoll, 0) + ' = ' + C.fmt(strips / perRoll, 2) +
+          ' → ' + C.fmt(rolls, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price_roll > 0) {
+        cost = rolls * v.price_roll;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(rolls, 0) + ' × ' + C.fmt(v.price_roll, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.rapport > 0) {
+        notes.push({ text: 'С раппортом ' + C.fmt(v.rapport, 0) + ' см обрезки от подгонки не используются - остаток в рулонах это нормально.' });
+      }
+      if (v.rapport >= 30) {
+        notes.push({ type: 'warn', text: 'Крупный рисунок: если оклеиваете от угла и подрезаете полосы у стен, добавьте ещё один рулон про запас.' });
+      }
+      if (v.proemy > 0) {
+        notes.push({ text: 'Проёмы вычтены по ширине. Над дверью и под окном полосы всё равно остаются, поэтому полностью вычитать площадь проёмов нельзя.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно обоев',
+          value: C.fmt(rolls, 0) + ' ' + C.plural(rolls, 'рулон', 'рулона', 'рулонов'),
+          sub: C.fmt(strips, 0) + ' ' + C.plural(strips, 'полоса', 'полосы', 'полос') +
+            ' · из рулона ' + C.fmt(perRoll, 0) + ' ' + C.plural(perRoll, 'полоса', 'полосы', 'полос')
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
