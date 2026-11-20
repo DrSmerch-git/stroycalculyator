@@ -7,6 +7,16 @@
 (function (global) {
   'use strict';
 
+  /* ---------- цели Яндекс.Метрики ---------- */
+
+  var YM_ID = 114374906;
+
+  function goal(name) {
+    try {
+      if (typeof global.ym === 'function') global.ym(YM_ID, 'reachGoal', name);
+    } catch (e) { /* счётчик заблокирован - расчёт не должен страдать */ }
+  }
+
   /* ---------- форматирование ---------- */
 
   var fmtCache = {};
@@ -191,6 +201,7 @@
       var text = buildCopyText(res, spec);
       copyText(text).then(function (ok) {
         status.textContent = ok ? 'Скопировано' : 'Не удалось скопировать';
+        if (ok) goal('calc_copy');
         setTimeout(function () { status.textContent = ''; }, 2200);
       });
     });
@@ -287,6 +298,9 @@
       });
     }
 
+    var userTouched = false;
+    var calcGoalSent = false;
+
     function update() {
       var v = readValues();
       syncVisibility(v);
@@ -297,11 +311,16 @@
         res = { error: 'Не удалось посчитать: проверьте введённые значения.' };
       }
       if (card) renderResult(card, res, spec);
+
+      if (userTouched && !calcGoalSent && res && !res.error && res.main) {
+        calcGoalSent = true;
+        goal('calc_done');
+      }
     }
 
     // пересчёт при любом изменении
-    form.addEventListener('input', update);
-    form.addEventListener('change', update);
+    form.addEventListener('input', function () { userTouched = true; update(); });
+    form.addEventListener('change', function () { userTouched = true; update(); });
 
     // Enter в полях не должен отправлять форму
     form.addEventListener('keydown', function (e) {
