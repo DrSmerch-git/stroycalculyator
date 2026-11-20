@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор штукатурки: сколько мешков нужно на стены</title>
+  <meta name="description" content="Рассчитайте расход штукатурки по площади стен, толщине слоя и весу мешка. Калькулятор вычитает окна и двери и показывает формулу расчёта.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-shtukaturki/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор штукатурки стен">
+  <meta property="og:description" content="Мешки штукатурки по площади стен, толщине слоя и расходу смеси.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор штукатурки",
+        "url": "https://stroycalculyator.ru/kalkulyator-shtukaturki/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор штукатурки" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько штукатурки нужно на 20 м² при слое 10 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При расходе 0,85 кг на 1 м² на 1 мм слоя нужно 20 × 10 × 0,85 = 170 кг. Мешками по 25 кг это 6,8 мешка, с запасом 5 % - 7,14, то есть 8 мешков."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой расход у гипсовой и цементной штукатурки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Гипсовая - около 8-10 кг на 1 м² при слое 10 мм, то есть 0,8-1 кг на 1 мм. Цементная тяжелее: 15-17 кг на 1 м² при 10 мм, около 1,6 кг на 1 мм. Точный расход указан на мешке."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли вычитать окна и двери?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, проёмы не штукатурят, поэтому их площадь вычитают из площади стен. Но запас 5-10 % всё равно нужен: у откосов и проёмов расход выше из-за подрезки и неровностей."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли нанести штукатурку слоем 3 см за один раз?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет. Гипсовую штукатурку наносят слоями до 15-20 мм, цементную - до 20-30 мм, иначе смесь сползёт или растрескается. Большую толщину набирают в два-три прохода с просушкой между ними."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/" aria-current="page">Штукатурка</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор штукатурки
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор штукатурки стен</h1>
+    <p class="lead">Считает площадь стен по периметру и высоте, вычитает окна и двери, переводит толщину слоя в килограммы и мешки. Подходит для гипсовых, цементных и декоративных смесей.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество штукатурки</h2>
+    <ul>
+      <li><strong>Периметр</strong> = 2 × (длина + ширина помещения).</li>
+      <li><strong>Площадь стен</strong> = периметр × высота − площадь окон и дверей.</li>
+      <li><strong>Масса смеси</strong> = площадь × толщина слоя в мм × расход на 1 мм × (1 + запас).</li>
+      <li><strong>Мешки</strong> = масса ÷ вес мешка, с округлением вверх.</li>
+    </ul>
+
+    <h3>Пример: комната 4 × 3 м, высота 2,7 м, слой 10 мм</h3>
+    <p>Периметр 2 × (4 + 3) = 14 м, площадь стен 14 × 2,7 = 37,8 м². Вычитаем двери и окна, например 3 м², получаем 34,8 м². Гипсовая штукатурка при 0,85 кг на 1 м² на 1 мм: 34,8 × 10 × 0,85 = <strong>296 кг</strong>. С запасом 5 % - 310 кг, мешками по 25 кг это <strong>13 мешков</strong>.</p>
+
+    <h2>Какой расход у разных смесей</h2>
+    <ul>
+      <li><strong>Гипсовая</strong> (Ротбанд и аналоги) - 8-10 кг на 1 м² при слое 10 мм, то есть 0,8-1 кг на 1 мм.</li>
+      <li><strong>Цементная</strong> - 15-17 кг на 1 м² при 10 мм, около 1,6 кг на 1 мм. Тяжелее, зато не боится влаги.</li>
+      <li><strong>Декоративная</strong> - расход зависит от фактуры: от 1 до 6 кг на 1 м², толщина обычно 2-5 мм.</li>
+      <li><strong>Гипсовая машинная</strong> - 8-9 кг на 1 м² при 10 мм, но наносится только станциями.</li>
+    </ul>
+    <p>Цифры на мешке конкретного производителя важнее таблиц: у смесей с перлитом или лёгким наполнителем расход ниже, у тяжёлых цементных - выше.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Стены почти никогда не бывают ровными. При перепаде 1-2 см средняя толщина слоя будет больше номинальной, поэтому запас 5-10 % обязателен.</li>
+      <li>Гипсовую штукатурку наносят слоями до 15-20 мм, цементную - до 20-30 мм. Слой толще этого набирают в несколько проходов и армируют сеткой.</li>
+      <li>Перед нанесением стену грунтуют: без грунта смесь отходит и сохнет неравномерно.</li>
+      <li>Толщина больше 5 см на большой площади почти всегда означает, что нужен другой подход: выравнивание ГКЛ или толстая штукатурка по маякам с сеткой.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько штукатурки нужно на 20 м² при слое 10 мм?</summary>
+        <p>При расходе 0,85 кг на 1 м² на 1 мм слоя нужно 20 × 10 × 0,85 = 170 кг. Мешками по 25 кг это 6,8 мешка, с запасом 5 % - 7,14, то есть 8 мешков.</p>
+      </details>
+      <details>
+        <summary>Какой расход у гипсовой и цементной штукатурки?</summary>
+        <p>Гипсовая - около 8-10 кг на 1 м² при слое 10 мм, то есть 0,8-1 кг на 1 мм. Цементная тяжелее: 15-17 кг на 1 м² при 10 мм, около 1,6 кг на 1 мм. Точный расход указан на мешке.</p>
+      </details>
+      <details>
+        <summary>Нужно ли вычитать окна и двери?</summary>
+        <p>Да, проёмы не штукатурят, поэтому их площадь вычитают из площади стен. Но запас 5-10 % всё равно нужен: у откосов и проёмов расход выше из-за подрезки и неровностей.</p>
+      </details>
+      <details>
+        <summary>Можно ли нанести штукатурку слоем 3 см за один раз?</summary>
+        <p>Нет. Гипсовую штукатурку наносят слоями до 15-20 мм, цементную - до 20-30 мм, иначе смесь сползёт или растрескается. Большую толщину набирают в два-три прохода с просушкой между ними.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт штукатурки',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина помещения', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'shirina', type: 'number', label: 'Ширина помещения', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'visota', type: 'number', label: 'Высота стен', unit: 'м', value: 2.7, step: 0.05, min: 0.5, group: 'Помещение' },
+      { key: 'proemy', type: 'number', label: 'Площадь окон и дверей', unit: 'м²', value: 3, step: 0.5, min: 0, group: 'Помещение',
+        hint: 'суммарная площадь проёмов, их не штукатурят' },
+
+      { key: 'tolshchina', type: 'number', label: 'Толщина слоя', unit: 'мм', value: 10, step: 1, min: 1, group: 'Слой',
+        hint: 'средняя толщина: при перепадах берите больше номинальной' },
+      { key: 'rashod', type: 'number', label: 'Расход смеси', unit: 'кг/м² на 1 мм', value: 0.85, step: 0.05, min: 0.1, group: 'Слой',
+        hint: 'гипсовая ≈ 0,85, цементная ≈ 1,6, декоративная - по фактуре (см. на мешке)' },
+
+      { key: 'meshok', type: 'select', label: 'Вес мешка', value: '25', group: 'Смесь', options: [
+        { v: '5', t: '5 кг' },
+        { v: '10', t: '10 кг' },
+        { v: '25', t: '25 кг' },
+        { v: '30', t: '30 кг' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас на неровности', value: '5', group: 'Смесь', options: [
+        { v: '0', t: 'Без запаса (ровные стены)' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 %' },
+        { v: '15', t: '15 % (сильные перепады)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за мешок', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.shirina <= 0) return { error: 'Укажите длину и ширину помещения больше нуля.' };
+      if (v.visota <= 0) return { error: 'Укажите высоту стен больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину слоя больше нуля.' };
+      if (v.rashod <= 0) return { error: 'Укажите расход смеси больше нуля.' };
+      if (v.proemy < 0) return { error: 'Площадь проёмов не может быть отрицательной.' };
+
+      var perim = 2 * (v.dlina + v.shirina);
+      var gross = perim * v.visota;
+      var area = gross - v.proemy;
+      if (area <= 0) return { error: 'Площадь проёмов больше площади стен - проверьте значения.' };
+
+      var mass = area * v.tolshchina * v.rashod * (1 + v.zapas / 100);
+      var bagWeight = parseFloat(v.meshok);
+      var bags = C.ceil(mass / bagWeight);
+      var boughtKg = bags * bagWeight;
+
+      var rows = [
+        { label: 'Периметр', value: C.fmt(perim, 2) + ' м' },
+        { label: 'Площадь стен', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Толщина слоя', value: C.fmt(v.tolshchina, 0) + ' мм' },
+        { label: 'Масса смеси', value: C.fmt(mass, 0) + ' кг' },
+        { label: 'Мешков по ' + C.fmt(bagWeight, 0) + ' кг', value: C.fmt(bags, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(boughtKg, 0) + ' кг' }
+      ];
+
+      var formula = [
+        'Периметр = 2 × (' + C.fmt(v.dlina, 2) + ' + ' + C.fmt(v.shirina, 2) + ') = ' + C.fmt(perim, 2) + ' м',
+        'Площадь стен = ' + C.fmt(perim, 2) + ' × ' + C.fmt(v.visota, 2) + ' − ' + C.fmt(v.proemy, 2) + ' = ' + C.fmt(area, 2) + ' м²',
+        'Масса = ' + C.fmt(area, 2) + ' × ' + C.fmt(v.tolshchina, 0) + ' мм × ' + C.fmt(v.rashod, 2) +
+          (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(mass, 0) + ' кг',
+        'Мешков = ' + C.fmt(mass, 0) + ' ÷ ' + C.fmt(bagWeight, 0) + ' = ' + C.fmt(mass / bagWeight, 2) +
+          ' → ' + C.fmt(bags, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = bags * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(bags, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.tolshchina > 30) {
+        notes.push({ type: 'warn', text: 'Слой больше 30 мм за один проход не наносят: штукатурят в два-три слоя с просушкой, при толщине от 50 мм нужна армирующая сетка.' });
+      }
+      if (v.tolshchina < 5) {
+        notes.push({ text: 'Слой тоньше 5 мм держится неустойчиво: для выравнивания лучше 8-10 мм, для тонкой отделки используйте шпаклёвку.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса смесь может закончиться на откосах и у маяков - там расход всегда выше среднего.' });
+      }
+      if (v.proemy === 0) {
+        notes.push({ text: 'Если окна и двери есть, но площадь не указана, материал будет посчитан с избытком.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно штукатурки',
+          value: C.fmt(bags, 0) + ' ' + C.plural(bags, 'мешок', 'мешка', 'мешков'),
+          sub: C.fmt(mass, 0) + ' кг · площадь стен ' + C.fmt(area, 2) + ' м²'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
