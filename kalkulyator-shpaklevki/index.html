@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор шпаклёвки: сколько мешков нужно на стены</title>
+  <meta name="description" content="Рассчитайте расход шпаклёвки по площади, толщине слоя и числу слоёв. Калькулятор переводит килограммы в мешки и показывает формулу расчёта.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-shpaklevki/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор шпаклёвки">
+  <meta property="og:description" content="Мешки шпаклёвки по площади, толщине слоя и числу слоёв.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор шпаклёвки",
+        "url": "https://stroycalculyator.ru/kalkulyator-shpaklevki/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор шпаклёвки" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько шпаклёвки нужно на 30 м² в два слоя по 2 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Площадь двух слоёв - 60 м². При расходе 1,2 кг на 1 м² на 1 мм и запасе 10 % получается 60 × 2 × 1,2 × 1,1 = 158 кг. Мешками по 20 кг это 7,9, то есть 8 мешков."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чем отличается расход стартовой и финишной шпаклёвки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Стартовая расходуется больше: 1,2-1,5 кг на 1 м² на 1 мм, потому что её кладут слоем до 3-5 мм и она грубее. Финишная тоньше и экономнее: 0,8-1,2 кг на 1 м² на 1 мм при слое 1-2 мм. Точную цифру производитель пишет на мешке."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли грунтовать перед шпаклёвкой?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Грунтовка снижает впитываемость основания, иначе смесь отдаёт воду стене, быстрее схватывается и хуже тянется. На пористых основаниях расход шпаклёвки без грунта заметно выше."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли нанести шпаклёвку слоем 5 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Финишную - нет, её слой ограничен 1-2 мм, иначе она растрескается. Стартовую наносят до 3-5 мм, а если перепады больше, это уже работа для штукатурки, а не шпаклёвки."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/" aria-current="page">Шпаклёвка</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор шпаклёвки
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор шпаклёвки</h1>
+    <p class="lead">Считает килограммы и мешки шпаклёвки по площади, толщине слоя и числу слоёв. Подходит для стартовых и финишных смесей, для стен и потолков.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество шпаклёвки</h2>
+    <ul>
+      <li><strong>Площадь слоёв</strong> = площадь поверхности × число слоёв.</li>
+      <li><strong>Масса смеси</strong> = площадь слоёв × толщина слоя в мм × расход на 1 мм × (1 + запас).</li>
+      <li><strong>Мешки</strong> = масса ÷ вес мешка, с округлением вверх.</li>
+    </ul>
+
+    <h3>Пример: 30 м², два слоя по 2 мм, мешок 20 кг</h3>
+    <p>Площадь двух слоёв - 30 × 2 = 60 м². При расходе 1,2 кг на 1 м² на 1 мм: 60 × 2 × 1,2 = 144 кг, с запасом 10 % - <strong>158 кг</strong>. Мешками по 20 кг это 7,9, то есть <strong>8 мешков</strong>.</p>
+
+    <h2>Стартовая и финишная: разница в расходе</h2>
+    <ul>
+      <li><strong>Стартовая</strong> - 1,2-1,5 кг на 1 м² на 1 мм, слой до 3-5 мм. Выравнивает перепады и укрывает основание.</li>
+      <li><strong>Финишная</strong> - 0,8-1,2 кг на 1 м² на 1 мм, слой 1-2 мм. Даёт гладкую поверхность под краску или обои.</li>
+      <li><strong>Влагостойкая и фасадная</strong> - расход близок к стартовой, но сохнет иначе: читайте инструкцию на мешке.</li>
+      <li><strong>Готовая паста</strong> - продаётся в ведрах по 5-25 кг, расход тот же, но считать нужно вёдрами, а не мешками.</li>
+    </ul>
+    <p>Стандартная схема нанесения - один слой стартовой и один слой финишной, то есть два прохода. Если стены ровные после штукатурки, иногда хватает одного финишного слоя.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Перед шпаклёвкой поверхность грунтуют: без грунта смесь быстро отдаёт воду и плохо тянется.</li>
+      <li>Каждый слой шлифуют после высыхания, поэтому толщину больше 2-3 мм на финише не делают - будет пыль и трещины.</li>
+      <li>Перепады больше 5 мм шпаклёвкой не выравнивают: это работа для штукатурки или гипсокартона.</li>
+      <li>Запас 10 % нужен на подрезку у углов, откосов и на потери при замешивании.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько шпаклёвки нужно на 30 м² в два слоя по 2 мм?</summary>
+        <p>Площадь двух слоёв - 60 м². При расходе 1,2 кг на 1 м² на 1 мм и запасе 10 % получается 60 × 2 × 1,2 × 1,1 = 158 кг. Мешками по 20 кг это 7,9, то есть 8 мешков.</p>
+      </details>
+      <details>
+        <summary>Чем отличается расход стартовой и финишной шпаклёвки?</summary>
+        <p>Стартовая расходуется больше: 1,2-1,5 кг на 1 м² на 1 мм, потому что её кладут слоем до 3-5 мм и она грубее. Финишная тоньше и экономнее: 0,8-1,2 кг на 1 м² на 1 мм при слое 1-2 мм. Точную цифру производитель пишет на мешке.</p>
+      </details>
+      <details>
+        <summary>Нужно ли грунтовать перед шпаклёвкой?</summary>
+        <p>Да. Грунтовка снижает впитываемость основания, иначе смесь отдаёт воду стене, быстрее схватывается и хуже тянется. На пористых основаниях расход шпаклёвки без грунта заметно выше.</p>
+      </details>
+      <details>
+        <summary>Можно ли нанести шпаклёвку слоем 5 мм?</summary>
+        <p>Финишную - нет, её слой ограничен 1-2 мм, иначе она растрескается. Стартовую наносят до 3-5 мм, а если перепады больше, это уже работа для штукатурки, а не шпаклёвки.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+      <li><a href="../kalkulyator-shtukaturki/">Штукатурка</a></li>
+      <li><a href="../kalkulyator-utepleniya/">Утеплитель</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт шпаклёвки',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'area', type: 'number', label: 'Площадь поверхности', unit: 'м²', value: 30, step: 1, min: 1, group: 'Поверхность',
+        hint: 'стены или потолок: площадь под отделку' },
+      { key: 'sloi', type: 'select', label: 'Слоёв', value: '2', group: 'Поверхность', options: [
+        { v: '1', t: '1 слой' },
+        { v: '2', t: '2 слоя (стартовый + финишный)' },
+        { v: '3', t: '3 слоя' }
+      ]},
+
+      { key: 'tolshchina', type: 'number', label: 'Толщина слоя', unit: 'мм', value: 2, step: 0.5, min: 0.5, group: 'Слой',
+        hint: 'финишная 1-2 мм, стартовая до 3-5 мм' },
+      { key: 'rashod', type: 'number', label: 'Расход смеси', unit: 'кг/м² на 1 мм', value: 1.2, step: 0.1, min: 0.1, group: 'Слой',
+        hint: 'стартовая ≈ 1,2-1,5, финишная ≈ 0,8-1,2 (см. на мешке)' },
+
+      { key: 'meshok', type: 'select', label: 'Вес мешка', value: '20', group: 'Смесь', options: [
+        { v: '5', t: '5 кг' },
+        { v: '10', t: '10 кг' },
+        { v: '20', t: '20 кг' },
+        { v: '25', t: '25 кг' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас', value: '10', group: 'Смесь', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 %' },
+        { v: '15', t: '15 % (много углов и откосов)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за мешок', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.area <= 0) return { error: 'Укажите площадь поверхности больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину слоя больше нуля.' };
+      if (v.rashod <= 0) return { error: 'Укажите расход смеси больше нуля.' };
+
+      var layerArea = v.area * v.sloi;
+      var mass = layerArea * v.tolshchina * v.rashod * (1 + v.zapas / 100);
+      var bagWeight = parseFloat(v.meshok);
+      var bags = C.ceil(mass / bagWeight);
+      var boughtKg = bags * bagWeight;
+
+      var rows = [
+        { label: 'Площадь слоёв', value: C.fmt(layerArea, 2) + ' м²' },
+        { label: 'Толщина слоя', value: C.fmt(v.tolshchina, 1) + ' мм' },
+        { label: 'Масса смеси', value: C.fmt(mass, 0) + ' кг' },
+        { label: 'Мешков по ' + C.fmt(bagWeight, 0) + ' кг', value: C.fmt(bags, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(boughtKg, 0) + ' кг' }
+      ];
+
+      var formula = [
+        'Площадь слоёв = ' + C.fmt(v.area, 0) + ' × ' + C.fmt(v.sloi, 0) + ' = ' + C.fmt(layerArea, 2) + ' м²',
+        'Масса = ' + C.fmt(layerArea, 2) + ' × ' + C.fmt(v.tolshchina, 1) + ' мм × ' + C.fmt(v.rashod, 1) +
+          (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(mass, 0) + ' кг',
+        'Мешков = ' + C.fmt(mass, 0) + ' ÷ ' + C.fmt(bagWeight, 0) + ' = ' + C.fmt(mass / bagWeight, 2) +
+          ' → ' + C.fmt(bags, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = bags * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(bags, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.tolshchina > 5) {
+        notes.push({ type: 'warn', text: 'Слой больше 5 мм для шпаклёвки слишком толстый: перепады такой величины выравнивают штукатуркой, иначе смесь растрескается.' });
+      } else if (v.tolshchina > 3) {
+        notes.push({ text: 'Слой толще 3 мм допустим только для стартовой смеси. Финишную кладут не толще 1-2 мм.' });
+      }
+      if (v.tolshchina < 1) {
+        notes.push({ text: 'Слой тоньше 1 мм почти не укрывает основание: на шероховатой стене расход всё равно будет больше расчётного.' });
+      }
+      if (v.sloi == 1) {
+        notes.push({ text: 'Обычно шпаклюют в два слоя - стартовый и финишный. Один слой годится, только если стена уже ровная после штукатурки.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса смесь закончится на углах, откосах и при замешивании: 10 % здесь не лишние.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно шпаклёвки',
+          value: C.fmt(bags, 0) + ' ' + C.plural(bags, 'мешок', 'мешка', 'мешков'),
+          sub: C.fmt(mass, 0) + ' кг · площадь слоёв ' + C.fmt(layerArea, 2) + ' м²'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
