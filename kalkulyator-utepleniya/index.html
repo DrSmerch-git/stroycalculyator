@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор утеплителя: сколько упаковок и дюбелей нужно</title>
+  <meta name="description" content="Рассчитайте количество утеплителя по площади, толщине слоя и площади упаковки. Калькулятор считает дюбели-грибки, объём и стоимость материала.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-utepleniya/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор утеплителя">
+  <meta property="og:description" content="Упаковки утеплителя по площади и толщине, дюбели-грибки и объём материала.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор утеплителя",
+        "url": "https://stroycalculyator.ru/kalkulyator-utepleniya/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор утеплителя" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько упаковок утеплителя нужно на 50 м² при толщине 100 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Если в упаковке 3,6 м², то с запасом 10 % нужно 50 × 1,1 = 55 м², то есть 55 ÷ 3,6 = 15,3, с округлением вверх - 16 упаковок. Это 57,6 м² и 5 м³ утеплителя."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько дюбелей-грибков нужно на 1 м²?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для стен - около 5 штук на 1 м²: по углам, по периметру и в центре плиты. Для потолка берут 6-8 штук на 1 м², потому что нагрузка выше. Длина дюбеля равна толщине утеплителя плюс 40-50 мм заглубления в стену."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой толщины утеплитель нужен для стен?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для средней полосы обычно берут 100-150 мм для стен, 150-200 мм для кровли и 100 мм для пола. Точная толщина зависит от региона, материала стены и нормативного сопротивления теплопередаче - её считает теплотехнический расчёт."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужна ли пароизоляция при утеплении?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, если утеплитель находится внутри конструкции: пароизоляция ставится с тёплой стороны, ветрозащитная мембрана - с холодной. Плёнки в расчёт упаковок не входят, их считают по площади с нахлёстом 10-15 см."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/" aria-current="page">Утеплитель</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор утеплителя
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор утеплителя</h1>
+    <p class="lead">Считает упаковки плитного утеплителя по площади и толщине слоя, объём материала, количество дюбелей-грибков и их длину. Подходит для минваты, пенопласта и ЭППС.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество утеплителя</h2>
+    <ul>
+      <li><strong>Площадь с запасом</strong> = площадь утепления × (1 + запас на подрезку).</li>
+      <li><strong>Упаковки</strong> = площадь с запасом ÷ площадь упаковки, с округлением вверх.</li>
+      <li><strong>Объём</strong> = площадь × толщина слоя в метрах.</li>
+      <li><strong>Дюбели</strong> = площадь × норма крепежа на 1 м², длина дюбеля = толщина + 50 мм.</li>
+    </ul>
+
+    <h3>Пример: 50 м², толщина 100 мм, упаковка 3,6 м²</h3>
+    <p>С запасом 10 % нужно 50 × 1,1 = 55 м². Делим на 3,6 м² в упаковке: 15,3, округляем вверх - <strong>16 упаковок</strong>, это 57,6 м² и 5 м³. Дюбелей при норме 5 штук на 1 м² нужно <strong>250 штук</strong>, длина каждого - 100 + 50 = <strong>150 мм</strong>.</p>
+
+    <h2>Какую толщину брать</h2>
+    <ul>
+      <li><strong>Стены</strong> - 100-150 мм для средней полосы; меньше 50 мм наружного эффекта почти не даёт.</li>
+      <li><strong>Кровля и мансарда</strong> - 150-200 мм, потому что через крышу уходит больше всего тепла.</li>
+      <li><strong>Пол по лагам и перекрытие</strong> - 100 мм, для холодного пола по грунту берут больше.</li>
+      <li><strong>Фасад под штукатурку</strong> - 100-150 мм, обязательно с армирующей сеткой в клеевом слое.</li>
+    </ul>
+    <p>Это ориентиры, а не норматив: точную толщину даёт теплотехнический расчёт по сопротивлению теплопередаче для конкретного региона и материала стены.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Утеплитель в упаковке сжат. Плиты покупают по площади, а не по объёму: после вскрытия они расправляются до заявленной толщины.</li>
+      <li>Запас 5-10 % нужен из-за подрезки у откосов, углов и вокруг проёмов. На сложной геометрии берите 15 %.</li>
+      <li>Дюбель-грибок должен входить в несущий материал минимум на 40-50 мм, поэтому его длина всегда больше толщины утеплителя.</li>
+      <li>Плёнки и мембраны в расчёт упаковок не входят: пароизоляция ставится с тёплой стороны, ветрозащита - с холодной, с нахлёстом 10-15 см.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько упаковок утеплителя нужно на 50 м² при толщине 100 мм?</summary>
+        <p>Если в упаковке 3,6 м², то с запасом 10 % нужно 50 × 1,1 = 55 м², то есть 55 ÷ 3,6 = 15,3, с округлением вверх - 16 упаковок. Это 57,6 м² и 5 м³ утеплителя.</p>
+      </details>
+      <details>
+        <summary>Сколько дюбелей-грибков нужно на 1 м²?</summary>
+        <p>Для стен - около 5 штук на 1 м²: по углам, по периметру и в центре плиты. Для потолка берут 6-8 штук на 1 м², потому что нагрузка выше. Длина дюбеля равна толщине утеплителя плюс 40-50 мм заглубления в стену.</p>
+      </details>
+      <details>
+        <summary>Какой толщины утеплитель нужен для стен?</summary>
+        <p>Для средней полосы обычно берут 100-150 мм для стен, 150-200 мм для кровли и 100 мм для пола. Точная толщина зависит от региона, материала стены и нормативного сопротивления теплопередаче - её считает теплотехнический расчёт.</p>
+      </details>
+      <details>
+        <summary>Нужна ли пароизоляция при утеплении?</summary>
+        <p>Да, если утеплитель находится внутри конструкции: пароизоляция ставится с тёплой стороны, ветрозащитная мембрана - с холодной. Плёнки в расчёт упаковок не входят, их считают по площади с нахлёстом 10-15 см.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Другие калькуляторы</h2>
+    <ul class="related">
+      <li><a href="../kalkulyator-plitki/">Плитка</a></li>
+      <li><a href="../kalkulyator-laminata/">Ламинат</a></li>
+      <li><a href="../kalkulyator-oboev/">Обои</a></li>
+      <li><a href="../kalkulyator-kraski/">Краска</a></li>
+      <li><a href="../kalkulyator-styazhki/">Стяжка</a></li>
+      <li><a href="../kalkulyator-gipsokartona/">Гипсокартон</a></li>
+      <li><a href="../kalkulyator-shtukaturki/">Штукатурка</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт утеплителя',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'area', type: 'number', label: 'Площадь утепления', unit: 'м²', value: 50, step: 1, min: 1, group: 'Площадь',
+        hint: 'для стен: периметр × высота − окна и двери' },
+      { key: 'zapas', type: 'select', label: 'Запас на подрезку', value: '10', group: 'Площадь', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 %' },
+        { v: '15', t: '15 % (сложная геометрия)' }
+      ]},
+
+      { key: 'tolshchina', type: 'number', label: 'Толщина утеплителя', unit: 'мм', value: 100, step: 10, min: 10, group: 'Утеплитель',
+        hint: 'стандартные плиты 50, 100, 150 мм' },
+      { key: 'up_area', type: 'number', label: 'Площадь в упаковке', unit: 'м²', value: 3.6, step: 0.1, min: 0.1, group: 'Утеплитель',
+        hint: 'указана на упаковке: минвата 100 мм ≈ 3,6 м², пенопласт 50 мм ≈ 5 м²' },
+
+      { key: 'dyubel', type: 'select', label: 'Норма дюбелей', value: '5', group: 'Крепёж', options: [
+        { v: '0', t: 'Не нужны (внутри каркаса)' },
+        { v: '4', t: '4 шт/м²' },
+        { v: '5', t: '5 шт/м² (стены)' },
+        { v: '6', t: '6 шт/м²' },
+        { v: '8', t: '8 шт/м² (потолок)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за упаковку', unit: '₽', value: '', step: 50, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' },
+      { key: 'price_dyubel', type: 'number', label: 'Цена за дюбель', unit: '₽', value: '', step: 1, min: 0, group: 'Покупка (необязательно)',
+        hint: 'если считать крепёж в стоимости' }
+    ],
+
+    compute: function (v) {
+      if (v.area <= 0) return { error: 'Укажите площадь утепления больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину утеплителя больше нуля.' };
+      if (v.up_area <= 0) return { error: 'Укажите площадь упаковки больше нуля.' };
+
+      var areaZ = v.area * (1 + v.zapas / 100);
+      var packs = C.ceil(areaZ / v.up_area);
+      var covered = packs * v.up_area;
+      var volume = v.area * v.tolshchina / 1000;
+      var dyubeli = v.dyubel > 0 ? C.ceil(v.area * v.dyubel) : 0;
+      var dyubelLen = C.ceil((v.tolshchina + 50) / 10) * 10;
+
+      var rows = [
+        { label: 'Площадь с запасом', value: C.fmt(areaZ, 2) + ' м²' },
+        { label: 'Упаковок по ' + C.fmt(v.up_area, 2) + ' м²', value: C.fmt(packs, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(covered, 1) + ' м²' },
+        { label: 'Объём утеплителя', value: C.fmt(volume, 2) + ' м³' }
+      ];
+
+      var formula = [
+        'Площадь с запасом = ' + C.fmt(v.area, 0) + ' × ' + C.fmt(1 + v.zapas / 100, 2) + ' = ' + C.fmt(areaZ, 2) + ' м²',
+        'Упаковок = ' + C.fmt(areaZ, 2) + ' ÷ ' + C.fmt(v.up_area, 2) + ' = ' + C.fmt(areaZ / v.up_area, 2) +
+          ' → ' + C.fmt(packs, 0) + ' шт',
+        'Объём = ' + C.fmt(v.area, 0) + ' × ' + C.fmt(v.tolshchina / 1000, 2) + ' = ' + C.fmt(volume, 2) + ' м³'
+      ];
+
+      if (dyubeli > 0) {
+        rows.push({ label: 'Дюбели-грибки', value: C.fmt(dyubeli, 0) + ' шт' });
+        rows.push({ label: 'Длина дюбеля', value: C.fmt(dyubelLen, 0) + ' мм' });
+        formula.push('Дюбели = ' + C.fmt(v.area, 0) + ' × ' + C.fmt(v.dyubel, 0) + ' = ' + C.fmt(dyubeli, 0) + ' шт');
+        formula.push('Длина дюбеля = ' + C.fmt(v.tolshchina, 0) + ' + 50 = ' + C.fmt(dyubelLen, 0) + ' мм');
+      }
+
+      var cost = 0;
+      if (v.price > 0) cost += packs * v.price;
+      if (v.price_dyubel > 0 && dyubeli > 0) cost += dyubeli * v.price_dyubel;
+      if (cost > 0) {
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        var parts = [];
+        if (v.price > 0) parts.push(C.fmt(packs, 0) + ' × ' + C.fmt(v.price, 0));
+        if (v.price_dyubel > 0 && dyubeli > 0) parts.push(C.fmt(dyubeli, 0) + ' × ' + C.fmt(v.price_dyubel, 0));
+        formula.push('Стоимость = ' + parts.join(' + ') + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.tolshchina < 50) {
+        notes.push({ type: 'warn', text: 'Слой тоньше 50 мм для наружного утепления почти не даёт эффекта: для средней полосы обычно нужно 100-150 мм.' });
+      }
+      if (v.tolshchina > 250) {
+        notes.push({ text: 'Толщина больше 250 мм встречается редко: проверьте, что такой слой помещается в конструкцию и держится крепежом.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса плиты закончатся на подрезке у откосов и углов: на ровной стене хватает 5 %, на сложной геометрии нужно 10-15 %.' });
+      }
+      if (v.dyubel > 0) {
+        notes.push({ text: 'Дюбель должен входить в несущий материал на 40-50 мм, поэтому его длина больше толщины утеплителя.' });
+      }
+      notes.push({ text: 'Плёнки и мембраны в расчёт не входят: пароизоляция ставится с тёплой стороны, ветрозащита - с холодной, с нахлёстом 10-15 см.' });
+
+      return {
+        main: {
+          label: 'Нужно утеплителя',
+          value: C.fmt(packs, 0) + ' ' + C.plural(packs, 'упаковка', 'упаковки', 'упаковок'),
+          sub: C.fmt(covered, 1) + ' м² · объём ' + C.fmt(volume, 2) + ' м³'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
