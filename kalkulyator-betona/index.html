@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор бетона: сколько кубов нужно на плиту или ленту</title>
+  <meta name="description" content="Рассчитайте объём бетона по длине, ширине и толщине, с запасом и округлением до полукуба. Калькулятор покажет вес и стоимость заказа.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-betona/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор бетона">
+  <meta property="og:description" content="Объём бетона по габаритам с запасом, весом и стоимостью заказа.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор бетона",
+        "url": "https://stroycalculyator.ru/kalkulyator-betona/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор бетона" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько бетона нужно на плиту 4 на 3 метра и толщиной 10 см?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Объём - 4 × 3 × 0,1 = 1,2 м³. С запасом 5 % это 1,26 м³, а заказывают обычно с округлением до полукуба, то есть 1,5 м³. Вес такого объёма - около 2,9 тонны."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько весит куб бетона?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Тяжёлый бетон на щебне весит около 2,4 тонны за куб, керамзитобетон легче - 1,6-1,8 тонны. Вес важен для заказа доставки и проверки, выдержит ли перекрытие."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Зачем запас бетона?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Часть смеси остаётся в бетононасосе и на стенках, часть уходит в неровности основания и в грунт под лентой. 5 % хватает для ровной опалубки, 10 % берут на сложные формы и заливку в грунт."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой бетон нужен для фундамента и для стяжки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для ленточного фундамента и плиты обычно берут класс B22,5 (М300), для стяжки и подбетонки хватает B15 (М200). Точный класс указывают в проекте: он зависит от нагрузки и грунта."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      <a href="../kalkulyator-plintusa/">Плинтус</a>
+      <a href="../kalkulyator-kirpicha/">Кирпич</a>
+      <a href="../kalkulyator-betona/" aria-current="page">Бетон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор бетона
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор бетона</h1>
+    <p class="lead">Считает объём бетона по длине, ширине и толщине, добавляет запас и переводит результат в кубы для заказа, вес и стоимость.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается объём бетона</h2>
+    <ul>
+      <li><strong>Объём</strong> = длина × ширина × толщина в метрах.</li>
+      <li><strong>С запасом</strong> = объём × (1 + запас).</li>
+      <li><strong>К заказу</strong> округляется вверх до полукуба: бетон везут миксерами и продают объёмом.</li>
+      <li><strong>Вес</strong> = объём × 2,4 т/м³ для тяжёлого бетона на щебне.</li>
+    </ul>
+
+    <h3>Пример: плита 4 × 3 м, толщина 10 см</h3>
+    <p>Толщина в метрах - 0,1. Объём 4 × 3 × 0,1 = 1,2 м³. С запасом 5 % - 1,26 м³, к заказу с округлением до полукуба - <strong>1,5 м³</strong>, вес около 2,9 тонны.</p>
+
+    <h2>Как считать разные конструкции</h2>
+    <ul>
+      <li><strong>Плита и пол по грунту</strong> - длина × ширина × толщина плиты.</li>
+      <li><strong>Лента фундамента</strong> - длину берут по осевой линии, ширину и высоту - по сечению ленты.</li>
+      <li><strong>Столбы и сваи</strong> - объём одного столба × количество, где объём = площадь сечения × высоту.</li>
+      <li><strong>Стяжка</strong> - площадь × толщину; на 1 м² при слое 5 см уходит 0,05 м³.</li>
+    </ul>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>В неровную опалубку и в заливку по грунту уходит больше бетона, чем показывает расчёт: берите запас 10 %.</li>
+      <li>Часть смеси остаётся в бетононасосе и на стенках жёлоба, поэтому «ровно по расчёту» почти всегда значит «чуть меньше, чем нужно».</li>
+      <li>Для ответственных конструкций лучше заводской бетон с паспортом: класс и подвижность на объекте не проверить.</li>
+      <li>Самостоятельный замес считают по объёмным пропорциям, например 1:2:4 (цемент, песок, щебень) для М200, и воды около половины массы цемента.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько бетона нужно на плиту 4 на 3 метра и толщиной 10 см?</summary>
+        <p>Объём - 4 × 3 × 0,1 = 1,2 м³. С запасом 5 % это 1,26 м³, а заказывают обычно с округлением до полукуба, то есть 1,5 м³. Вес такого объёма - около 2,9 тонны.</p>
+      </details>
+      <details>
+        <summary>Сколько весит куб бетона?</summary>
+        <p>Тяжёлый бетон на щебне весит около 2,4 тонны за куб, керамзитобетон легче - 1,6-1,8 тонны. Вес важен для заказа доставки и проверки, выдержит ли перекрытие.</p>
+      </details>
+      <details>
+        <summary>Зачем запас бетона?</summary>
+        <p>Часть смеси остаётся в бетононасосе и на стенках, часть уходит в неровности основания и в грунт под лентой. 5 % хватает для ровной опалубки, 10 % берут на сложные формы и заливку в грунт.</p>
+      </details>
+      <details>
+        <summary>Какой бетон нужен для фундамента и для стяжки?</summary>
+        <p>Для ленточного фундамента и плиты обычно берут класс B22,5 (М300), для стяжки и подбетонки хватает B15 (М200). Точный класс указывают в проекте: он зависит от нагрузки и грунта.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+        <a href="../kalkulyator-plintusa/">Плинтус</a>
+        <a href="../kalkulyator-kirpicha/">Кирпич</a>
+        <a href="../kalkulyator-betona/">Бетон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт бетона',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Размеры',
+        hint: 'для ленты - длина по осевой линии' },
+      { key: 'shirina', type: 'number', label: 'Ширина', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Размеры' },
+      { key: 'tolshchina', type: 'number', label: 'Толщина', unit: 'см', value: 10, step: 1, min: 1, group: 'Размеры',
+        hint: 'плита 10-20 см, лента 30-80 см, стяжка 5-10 см' },
+
+      { key: 'zapas', type: 'select', label: 'Запас', value: '5', group: 'Заказ', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 % (ровная опалубка)' },
+        { v: '10', t: '10 % (заливка в грунт, сложная форма)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за куб', unit: '₽', value: '', step: 100, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.shirina <= 0) return { error: 'Укажите длину и ширину больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину больше нуля.' };
+
+      var t = v.tolshchina / 100;
+      var volume = v.dlina * v.shirina * t;
+      var volumeZ = volume * (1 + v.zapas / 100);
+      var order = C.ceil(volumeZ * 2) / 2;
+      var weight = volume * 2.4;
+
+      var rows = [
+        { label: 'Площадь', value: C.fmt(v.dlina * v.shirina, 2) + ' м²' },
+        { label: 'Толщина', value: C.fmt(v.tolshchina, 0) + ' см' },
+        { label: 'Объём', value: C.fmt(volume, 2) + ' м³' },
+        { label: 'С запасом', value: C.fmt(volumeZ, 2) + ' м³' },
+        { label: 'К заказу (до 0,5 м³)', value: C.fmt(order, 1) + ' м³', total: true },
+        { label: 'Вес бетона', value: '≈ ' + C.fmt(weight, 1) + ' т' }
+      ];
+
+      var formula = [
+        'Объём = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.shirina, 2) + ' × ' + C.fmt(t, 2) + ' = ' + C.fmt(volume, 2) + ' м³',
+        'С запасом = ' + C.fmt(volume, 2) + (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(volumeZ, 2) + ' м³',
+        'К заказу = ' + C.fmt(volumeZ, 2) + ' → ' + C.fmt(order, 1) + ' м³',
+        'Вес ≈ ' + C.fmt(volume, 2) + ' × 2,4 = ' + C.fmt(weight, 1) + ' т'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = order * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(order, 1) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса бетона почти всегда не хватает: часть остаётся в насосе и на стенках, часть уходит в неровности основания.' });
+      }
+      if (v.tolshchina < 5) {
+        notes.push({ text: 'Слой тоньше 5 см для несущей конструкции слишком тонкий: для стяжки это норма, но армировать её нужно сеткой.' });
+      }
+      if (v.tolshchina > 60) {
+        notes.push({ text: 'Толщина больше 60 см - это уже массивная конструкция: проверьте, выдержит ли грунт и нужна ли арматура по расчёту.' });
+      }
+      notes.push({ text: 'Для фундамента и плиты класс бетона указывают в проекте: чаще это B22,5 (М300), для стяжки хватает B15 (М200).' });
+
+      return {
+        main: {
+          label: 'Нужно бетона',
+          value: C.fmt(volumeZ, 2) + ' м³',
+          sub: C.fmt(v.dlina * v.shirina, 2) + ' м² · толщина ' + C.fmt(v.tolshchina, 0) + ' см · заказать ' + C.fmt(order, 1) + ' м³'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

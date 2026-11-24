@@ -77,8 +77,8 @@ a:hover { text-decoration: underline; }
   flex: 0 0 auto;
 }
 
-.nav { display: flex; gap: 16px; font-size: 14px; }
-.nav a { color: var(--muted); }
+.nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; font-size: 13px; }
+.nav a { color: var(--muted); white-space: nowrap; }
 .nav a:hover { color: var(--ink); text-decoration: none; }
 .nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
 
@@ -333,18 +333,6 @@ p { margin: 0 0 12px; }
 .faq details[open] summary { margin-bottom: 8px; }
 .faq p { color: var(--muted); font-size: 14.5px; margin: 0; }
 
-.related { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 12px 0 0; list-style: none; }
-.related a {
-  display: inline-block;
-  font-size: 14px;
-  padding: 7px 12px;
-  border-radius: 99px;
-  background: #fff;
-  border: 1px solid var(--line);
-  color: var(--ink);
-}
-.related a:hover { border-color: var(--accent); color: var(--accent-dark); text-decoration: none; }
-
 /* ---------- сетка преимуществ ---------- */
 
 .features {
@@ -380,7 +368,7 @@ p { margin: 0 0 12px; }
   color: var(--muted);
 }
 .site-footer a { color: var(--muted); }
-.site-footer__row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between; }
+.site-footer__row { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 14px; }
 .site-footer__links { display: flex; flex-wrap: wrap; gap: 14px; }
 .disclaimer { margin-top: 16px; font-size: 12.5px; opacity: .85; max-width: 80ch; }
 

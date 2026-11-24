@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор плинтуса: сколько планок нужно на комнату</title>
+  <meta name="description" content="Рассчитайте плинтус по периметру помещения с вычетом дверных проёмов, длине планки и запасу на подрезку. Калькулятор покажет планки и стоимость.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-plintusa/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор плинтуса">
+  <meta property="og:description" content="Планки плинтуса по периметру комнаты с вычетом дверей и запасом на подрезку.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор плинтуса",
+        "url": "https://stroycalculyator.ru/kalkulyator-plintusa/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор плинтуса" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько плинтуса нужно на комнату 4 на 3 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Периметр такой комнаты - 14 метров. Если вычесть дверной проём 0,9 м, останется 13,1 м. С запасом 10 % это 14,41 м, то есть 6 планок по 2,5 м или 5 планок по 3 м."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужно ли вычитать дверные проёмы?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, в проёме плинтус не ставят, поэтому ширину дверей вычитают из периметра. Если дверь без наличников и плинтус заходит в проём, вычитать не нужно."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой запас плинтуса брать на подрезку?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На комнату обычной формы хватает 5 %, на помещение с большим числом углов, ниш и труб - 10-15 %. Запас нужен из-за подрезки под 45 градусов и неизбежных ошибок."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что нужно кроме планок?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Внутренние и внешние уголки, соединители на стыках планок и заглушки на торцы у дверей. На обычную комнату это 4 внутренних угла и 2 заглушки у дверного проёма."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      <a href="../kalkulyator-plintusa/" aria-current="page">Плинтус</a>
+      <a href="../kalkulyator-kirpicha/">Кирпич</a>
+      <a href="../kalkulyator-betona/">Бетон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор плинтуса
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор плинтуса</h1>
+    <p class="lead">Считает длину плинтуса по периметру комнаты с вычетом дверных проёмов и переводит её в планки. Подходит для пластикового, деревянного и МДФ-плинтуса.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество плинтуса</h2>
+    <ul>
+      <li><strong>Периметр</strong> = 2 × (длина + ширина комнаты).</li>
+      <li><strong>Длина плинтуса</strong> = периметр − ширина дверных проёмов.</li>
+      <li><strong>С запасом</strong> = длина × (1 + запас на подрезку).</li>
+      <li><strong>Планки</strong> = длина с запасом ÷ длина планки, с округлением вверх.</li>
+    </ul>
+
+    <h3>Пример: комната 4 × 3 м, дверь 0,9 м, планка 2,5 м</h3>
+    <p>Периметр 2 × (4 + 3) = 14 м. Вычитаем дверь: 14 − 0,9 = 13,1 м. С запасом 10 % - 14,41 м. Делим на 2,5 м: 5,76, округляем вверх - <strong>6 планок</strong>, это 15 метров плинтуса.</p>
+
+    <h2>Что учесть кроме метража</h2>
+    <ul>
+      <li><strong>Углы.</strong> На обычную комнату их 4 внутренних. Внешние углы бывают у ниш и выступов, на каждый нужен внешний уголок.</li>
+      <li><strong>Стыки.</strong> Если стена длиннее планки, две планки стыкуют через соединитель - лучше спрятать стык в незаметном месте.</li>
+      <li><strong>Заглушки.</strong> Торцы у дверных проёмов закрывают заглушками, иначе видно срез.</li>
+      <li><strong>Форма комнаты.</strong> В Г-образной комнате периметр считают по внешнему контуру и добавляют внутренний угол.</li>
+      <li><strong>Кривые стены.</strong> Плинтус на неровной стене прилегает неплотно, поэтому запас 10 % на подрезку и подгонку оправдан.</li>
+    </ul>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Пластиковый плинтус с кабель-каналом режут ножовкой, а углы закрывают готовыми уголками - подрезка под 45 градусов там не нужна.</li>
+      <li>Плинтус крепят после чистового пола и обоев, иначе придётся снимать и портить отделку.</li>
+      <li>Деревянный и МДФ-плинтус подрезают под 45 градусов, поэтому на него уходит больше материала, чем на пластиковый.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько плинтуса нужно на комнату 4 на 3 метра?</summary>
+        <p>Периметр такой комнаты - 14 метров. Если вычесть дверной проём 0,9 м, останется 13,1 м. С запасом 10 % это 14,41 м, то есть 6 планок по 2,5 м или 5 планок по 3 м.</p>
+      </details>
+      <details>
+        <summary>Нужно ли вычитать дверные проёмы?</summary>
+        <p>Да, в проёме плинтус не ставят, поэтому ширину дверей вычитают из периметра. Если дверь без наличников и плинтус заходит в проём, вычитать не нужно.</p>
+      </details>
+      <details>
+        <summary>Какой запас плинтуса брать на подрезку?</summary>
+        <p>На комнату обычной формы хватает 5 %, на помещение с большим числом углов, ниш и труб - 10-15 %. Запас нужен из-за подрезки под 45 градусов и неизбежных ошибок.</p>
+      </details>
+      <details>
+        <summary>Что нужно кроме планок?</summary>
+        <p>Внутренние и внешние уголки, соединители на стыках планок и заглушки на торцы у дверей. На обычную комнату это 4 внутренних угла и 2 заглушки у дверного проёма.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+        <a href="../kalkulyator-plintusa/">Плинтус</a>
+        <a href="../kalkulyator-kirpicha/">Кирпич</a>
+        <a href="../kalkulyator-betona/">Бетон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт плинтуса',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина комнаты', unit: 'м', value: 4, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'shirina', type: 'number', label: 'Ширина комнаты', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Помещение' },
+      { key: 'dveri', type: 'number', label: 'Ширина дверных проёмов', unit: 'м', value: 0.9, step: 0.1, min: 0, group: 'Помещение',
+        hint: 'суммарная ширина дверей: в проёме плинтус не ставят' },
+
+      { key: 'planka', type: 'select', label: 'Длина планки', value: '2.5', group: 'Плинтус', options: [
+        { v: '2', t: '2 м' },
+        { v: '2.5', t: '2,5 м' },
+        { v: '3', t: '3 м' },
+        { v: '4', t: '4 м' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас на подрезку', value: '10', group: 'Плинтус', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 %' },
+        { v: '15', t: '15 % (много углов и ниш)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за планку', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.shirina <= 0) return { error: 'Укажите длину и ширину комнаты больше нуля.' };
+      if (v.dveri < 0) return { error: 'Ширина проёмов не может быть отрицательной.' };
+
+      var perim = 2 * (v.dlina + v.shirina);
+      var length = perim - v.dveri;
+      if (length <= 0) return { error: 'Проёмы шире периметра комнаты - проверьте значения.' };
+
+      var lengthZ = length * (1 + v.zapas / 100);
+      var plank = parseFloat(v.planka);
+      var planks = C.ceil(lengthZ / plank);
+      var boughtM = planks * plank;
+
+      var rows = [
+        { label: 'Периметр', value: C.fmt(perim, 2) + ' м' },
+        { label: 'Без дверных проёмов', value: C.fmt(length, 2) + ' м' },
+        { label: 'С запасом', value: C.fmt(lengthZ, 2) + ' м' },
+        { label: 'Планок по ' + C.fmt(plank, 1) + ' м', value: C.fmt(planks, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(boughtM, 1) + ' м' }
+      ];
+
+      var formula = [
+        'Периметр = 2 × (' + C.fmt(v.dlina, 2) + ' + ' + C.fmt(v.shirina, 2) + ') = ' + C.fmt(perim, 2) + ' м',
+        'Длина = ' + C.fmt(perim, 2) + ' − ' + C.fmt(v.dveri, 2) + ' = ' + C.fmt(length, 2) + ' м',
+        'С запасом = ' + C.fmt(length, 2) + (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(lengthZ, 2) + ' м',
+        'Планок = ' + C.fmt(lengthZ, 2) + ' ÷ ' + C.fmt(plank, 1) + ' = ' + C.fmt(lengthZ / plank, 2) +
+          ' → ' + C.fmt(planks, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = planks * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(planks, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.dveri === 0) {
+        notes.push({ text: 'Дверные проёмы не вычтены: если плинтус прерывается на дверях, укажите их суммарную ширину.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса не хватит на подрезку под 45 градусов и на ошибки: на комнату с углами нужно 10 %.' });
+      }
+      notes.push({ text: 'Уголки, соединители и заглушки считают отдельно: на обычную комнату 4 внутренних угла и 2 заглушки у двери.' });
+
+      return {
+        main: {
+          label: 'Нужно плинтуса',
+          value: C.fmt(planks, 0) + ' ' + C.plural(planks, 'планка', 'планки', 'планок'),
+          sub: C.fmt(boughtM, 1) + ' м · длина без проёмов ' + C.fmt(length, 2) + ' м'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

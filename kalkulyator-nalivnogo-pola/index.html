@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор наливного пола: сколько мешков смеси нужно</title>
+  <meta name="description" content="Рассчитайте наливной пол по площади, толщине слоя и расходу смеси. Калькулятор переводит килограммы в мешки и показывает формулу и стоимость.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-nalivnogo-pola/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор наливного пола">
+  <meta property="og:description" content="Мешки самовыравнивающейся смеси по площади, толщине слоя и расходу.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор наливного пола",
+        "url": "https://stroycalculyator.ru/kalkulyator-nalivnogo-pola/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор наливного пола" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько наливного пола нужно на 20 м² при слое 5 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При расходе 1,6 кг на 1 м² на 1 мм слоя нужно 20 × 5 × 1,6 = 160 кг. С запасом 5 % это 168 кг, мешками по 25 кг - 6,7, то есть 7 мешков."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чем наливной пол отличается от стяжки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Наливной пол - это тонкослойная самовыравнивающаяся смесь для финишного выравнивания: 2-10 мм, ложится ровно и сохнет быстро. Стяжка выравнивает основание на 3-10 см и набирает прочность неделями. Для перепадов больше 1 см нужна стяжка или ровнитель, а не наливной пол."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько воды нужно для наливного пола?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Столько, сколько указал производитель на мешке, обычно 0,18-0,22 л на 1 кг смеси. Больше воды - смесь растекается легче, но прочность падает и поверхность пылит. Воду добавляют в смесь, а не наоборот, и перемешивают миксером."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли залить наливной пол слоем 10 мм?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Обычные смеси рассчитаны на 2-10 мм, и 10 мм - уже верхняя граница: слой сохнет дольше и может растрескаться. Если перепады больше, основание выравнивают ровнителем или стяжкой, а наливной пол кладут сверху тонким слоем."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-nalivnogo-pola/" aria-current="page">Наливной пол</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      <a href="../kalkulyator-plintusa/">Плинтус</a>
+      <a href="../kalkulyator-kirpicha/">Кирпич</a>
+      <a href="../kalkulyator-betona/">Бетон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор наливного пола
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор наливного пола</h1>
+    <p class="lead">Считает килограммы и мешки самовыравнивающейся смеси по площади, толщине слоя и расходу. Подходит для наливного пола и тонкого ровнителя на его основе.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество наливного пола</h2>
+    <ul>
+      <li><strong>Масса смеси</strong> = площадь × толщина слоя в мм × расход на 1 мм × (1 + запас).</li>
+      <li><strong>Мешки</strong> = масса ÷ вес мешка, с округлением вверх.</li>
+      <li><strong>Вода</strong> = по инструкции производителя, обычно 0,18-0,22 л на 1 кг смеси.</li>
+    </ul>
+
+    <h3>Пример: 20 м², слой 5 мм, мешок 25 кг</h3>
+    <p>При расходе 1,6 кг на 1 м² на 1 мм нужно 20 × 5 × 1,6 = 160 кг. С запасом 5 % - <strong>168 кг</strong>, мешками по 25 кг это 6,7, то есть <strong>7 мешков</strong>.</p>
+
+    <h2>Наливной пол и стяжка: в чём разница</h2>
+    <ul>
+      <li><strong>Наливной пол</strong> - тонкий слой 2-10 мм, растекается сам, сохнет за сутки, стоит дороже за килограмм.</li>
+      <li><strong>Стяжка</strong> - 3-10 см, набирает прочность неделями, дешевле, выравнивает большие перепады.</li>
+      <li><strong>Ровнитель</strong> - промежуточный вариант: 10-30 мм, грубее наливного пола, но толще его.</li>
+    </ul>
+    <p>Практическая схема: сначала стяжка или ровнитель выводит геометрию, потом наливной пол даёт гладкую поверхность под ламинат, плитку или линолеум. Если пол уже ровный, хватает одного наливного слоя 3-5 мм.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Основание грунтуют и обеспыливают: на пыли смесь не схватывается с полом и отслаивается.</li>
+      <li>Воду добавляют строго по инструкции. Перелив воды - самая частая причина пылящего и слабого пола.</li>
+      <li>Смесь готовят порциями на 20-30 минут работы: схватывается она быстрее, чем кажется.</li>
+      <li>Заливают при температуре основания и воздуха от +5 °C, иначе смесь не наберёт прочность.</li>
+      <li>Пузыри убирают игольчатым валиком сразу после заливки, пока смесь жидкая.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько наливного пола нужно на 20 м² при слое 5 мм?</summary>
+        <p>При расходе 1,6 кг на 1 м² на 1 мм слоя нужно 20 × 5 × 1,6 = 160 кг. С запасом 5 % это 168 кг, мешками по 25 кг - 6,7, то есть 7 мешков.</p>
+      </details>
+      <details>
+        <summary>Чем наливной пол отличается от стяжки?</summary>
+        <p>Наливной пол - это тонкослойная самовыравнивающаяся смесь для финишного выравнивания: 2-10 мм, ложится ровно и сохнет быстро. Стяжка выравнивает основание на 3-10 см и набирает прочность неделями. Для перепадов больше 1 см нужна стяжка или ровнитель, а не наливной пол.</p>
+      </details>
+      <details>
+        <summary>Сколько воды нужно для наливного пола?</summary>
+        <p>Столько, сколько указал производитель на мешке, обычно 0,18-0,22 л на 1 кг смеси. Больше воды - смесь растекается легче, но прочность падает и поверхность пылит. Воду добавляют в смесь, а не наоборот, и перемешивают миксером.</p>
+      </details>
+      <details>
+        <summary>Можно ли залить наливной пол слоем 10 мм?</summary>
+        <p>Обычные смеси рассчитаны на 2-10 мм, и 10 мм - уже верхняя граница: слой сохнет дольше и может растрескаться. Если перепады больше, основание выравнивают ровнителем или стяжкой, а наливной пол кладут сверху тонким слоем.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+        <a href="../kalkulyator-plintusa/">Плинтус</a>
+        <a href="../kalkulyator-kirpicha/">Кирпич</a>
+        <a href="../kalkulyator-betona/">Бетон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт наливного пола',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'area', type: 'number', label: 'Площадь пола', unit: 'м²', value: 20, step: 0.5, min: 0.5, group: 'Площадь',
+        hint: 'площадь помещения по полу, без учёта стен' },
+      { key: 'tolshchina', type: 'number', label: 'Толщина слоя', unit: 'мм', value: 5, step: 0.5, min: 1, group: 'Слой',
+        hint: 'обычно 2-10 мм: чем ровнее основание, тем тоньше слой' },
+      { key: 'rashod', type: 'number', label: 'Расход смеси', unit: 'кг/м² на 1 мм', value: 1.6, step: 0.1, min: 0.1, group: 'Слой',
+        hint: 'типично 1,5-1,8; точный расход на мешке' },
+
+      { key: 'meshok', type: 'select', label: 'Вес мешка', value: '25', group: 'Смесь', options: [
+        { v: '20', t: '20 кг' },
+        { v: '25', t: '25 кг' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас', value: '5', group: 'Смесь', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '10', t: '10 % (сложная геометрия)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за мешок', unit: '₽', value: '', step: 10, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.area <= 0) return { error: 'Укажите площадь пола больше нуля.' };
+      if (v.tolshchina <= 0) return { error: 'Укажите толщину слоя больше нуля.' };
+      if (v.rashod <= 0) return { error: 'Укажите расход смеси больше нуля.' };
+
+      var mass = v.area * v.tolshchina * v.rashod * (1 + v.zapas / 100);
+      var bagWeight = parseFloat(v.meshok);
+      var bags = C.ceil(mass / bagWeight);
+      var boughtKg = bags * bagWeight;
+      var water = mass * 0.2;
+
+      var rows = [
+        { label: 'Площадь', value: C.fmt(v.area, 1) + ' м²' },
+        { label: 'Толщина слоя', value: C.fmt(v.tolshchina, 1) + ' мм' },
+        { label: 'Масса смеси', value: C.fmt(mass, 0) + ' кг' },
+        { label: 'Мешков по ' + C.fmt(bagWeight, 0) + ' кг', value: C.fmt(bags, 0) + ' шт', total: true },
+        { label: 'Будет куплено', value: C.fmt(boughtKg, 0) + ' кг' },
+        { label: 'Воды для затворения', value: '≈ ' + C.fmt(water, 0) + ' л' }
+      ];
+
+      var formula = [
+        'Масса = ' + C.fmt(v.area, 1) + ' × ' + C.fmt(v.tolshchina, 1) + ' мм × ' + C.fmt(v.rashod, 1) +
+          (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(mass, 0) + ' кг',
+        'Мешков = ' + C.fmt(mass, 0) + ' ÷ ' + C.fmt(bagWeight, 0) + ' = ' + C.fmt(mass / bagWeight, 2) +
+          ' → ' + C.fmt(bags, 0) + ' шт',
+        'Воды ≈ ' + C.fmt(mass, 0) + ' × 0,2 = ' + C.fmt(water, 0) + ' л (уточните по инструкции)'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = bags * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(bags, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.tolshchina > 10) {
+        notes.push({ type: 'warn', text: 'Слой толще 10 мм для наливного пола не делают: такие перепады выравнивают ровнителем или стяжкой, иначе смесь растрескается.' });
+      }
+      if (v.tolshchina < 2) {
+        notes.push({ text: 'Слой тоньше 2 мм почти не выравнивает основание: на неровном полу расход всё равно будет больше.' });
+      }
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса смесь закончится на последних метрах и у стен: 5 % здесь достаточно, 10 % - для комнат сложной формы.' });
+      }
+      notes.push({ text: 'Вода указана ориентировочно, по 0,2 л на 1 кг. Точную цифру производитель пишет на мешке: больше воды - меньше прочность.' });
+
+      return {
+        main: {
+          label: 'Нужно смеси',
+          value: C.fmt(bags, 0) + ' ' + C.plural(bags, 'мешок', 'мешка', 'мешков'),
+          sub: C.fmt(mass, 0) + ' кг · ' + C.fmt(v.area, 1) + ' м² слоем ' + C.fmt(v.tolshchina, 1) + ' мм'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>

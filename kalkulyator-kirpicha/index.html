@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор кирпича: сколько штук нужно на кладку</title>
+  <meta name="description" content="Рассчитайте количество кирпича по площади кладки, толщине стены и типу кирпича. Калькулятор учитывает проёмы и запас на бой, показывает штуки и стоимость.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-kirpicha/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор кирпича">
+  <meta property="og:description" content="Штуки кирпича по площади кладки, толщине стены и типу кирпича.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор кирпича",
+        "url": "https://stroycalculyator.ru/kalkulyator-kirpicha/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор кирпича" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько кирпича нужно на 1 м² кладки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для одинарного кирпича с учётом раствора: 51 штука при кладке в полкирпича, 102 в один кирпич, 153 в полтора, 204 в два. Полуторного нужно меньше: 39, 78, 117 и 156 штук соответственно, двойного - 26, 52, 78 и 104."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько кирпича нужно на стену 10 на 3 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Площадь такой стены - 30 м². Если вычесть проёмы, например 4 м², останется 26 м². При кладке в один кирпич из одинарного кирпича это 26 × 102 = 2 652 штуки, с запасом 7 % - 2 838 штук."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какой запас кирпича брать?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На бой, подрезку и подгонку закладывают 5-7 %, на сложные участки с арками и выступами - до 10 %. Кирпич одной партии лучше брать с избытком: докупить такой же оттенок потом сложно."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чем отличается одинарный, полуторный и двойной кирпич?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Одинарный - 250 × 120 × 65 мм, полуторный - 250 × 120 × 88 мм, двойной - 250 × 120 × 138 мм. Чем выше кирпич, тем меньше штук нужно на квадратный метр и тем быстрее идёт кладка, но перевязка и подрезка у высоких кирпичей сложнее."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      <a href="../kalkulyator-plintusa/">Плинтус</a>
+      <a href="../kalkulyator-kirpicha/" aria-current="page">Кирпич</a>
+      <a href="../kalkulyator-betona/">Бетон</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор кирпича
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор кирпича</h1>
+    <p class="lead">Считает штуки кирпича по площади кладки за вычетом проёмов, толщине стены и типу кирпича. Подходит для стен, перегородок и заборов.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество кирпича</h2>
+    <ul>
+      <li><strong>Площадь кладки</strong> = длина × высота − площадь проёмов.</li>
+      <li><strong>Расход на 1 м²</strong> берётся из таблицы и зависит от типа кирпича и толщины стены.</li>
+      <li><strong>Количество</strong> = площадь × расход × (1 + запас), с округлением вверх.</li>
+    </ul>
+
+    <h3>Пример: стена 10 × 3 м, проёмы 4 м², кладка в один кирпич</h3>
+    <p>Площадь 10 × 3 − 4 = 26 м². При кладке в один кирпич из одинарного кирпича расход 102 штуки на 1 м²: 26 × 102 = 2 652 штуки. С запасом 7 % - <strong>2 838 штук</strong>.</p>
+
+    <h2>Расход кирпича на 1 м² кладки</h2>
+    <ul>
+      <li><strong>Одинарный</strong> (250 × 120 × 65 мм): в полкирпича 51, в один 102, в полтора 153, в два 204.</li>
+      <li><strong>Полуторный</strong> (250 × 120 × 88 мм): 39, 78, 117, 156.</li>
+      <li><strong>Двойной</strong> (250 × 120 × 138 мм): 26, 52, 78, 104.</li>
+    </ul>
+    <p>Цифры даны с учётом кладочного раствора, то есть шва около 10 мм. Толщина стены в кирпичах: полкирпича - 120 мм, один - 250 мм, полтора - 380 мм, два - 510 мм.</p>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Запас 5-7 % нужен на бой, подрезку и подгонку углов. Кирпич одной партии лучше брать с избытком: докупить такой же оттенок потом сложно.</li>
+      <li>Раствор в расчёт не входит: на 1 м² кладки уходит примерно 0,02-0,03 м³ смеси в зависимости от толщины шва.</li>
+      <li>Облицовочный и рядовой кирпич считаются одинаково - по площади, но облицовка обычно в полкирпича или в кирпич.</li>
+      <li>Кладка с утеплением внутри не меняет количество кирпича: расход зависит только от площади и толщины самой кладки.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько кирпича нужно на 1 м² кладки?</summary>
+        <p>Для одинарного кирпича с учётом раствора: 51 штука при кладке в полкирпича, 102 в один кирпич, 153 в полтора, 204 в два. Полуторного нужно меньше: 39, 78, 117 и 156 штук соответственно, двойного - 26, 52, 78 и 104.</p>
+      </details>
+      <details>
+        <summary>Сколько кирпича нужно на стену 10 на 3 метра?</summary>
+        <p>Площадь такой стены - 30 м². Если вычесть проёмы, например 4 м², останется 26 м². При кладке в один кирпич из одинарного кирпича это 26 × 102 = 2 652 штуки, с запасом 7 % - 2 838 штук.</p>
+      </details>
+      <details>
+        <summary>Какой запас кирпича брать?</summary>
+        <p>На бой, подрезку и подгонку закладывают 5-7 %, на сложные участки с арками и выступами - до 10 %. Кирпич одной партии лучше брать с избытком: докупить такой же оттенок потом сложно.</p>
+      </details>
+      <details>
+        <summary>Чем отличается одинарный, полуторный и двойной кирпич?</summary>
+        <p>Одинарный - 250 × 120 × 65 мм, полуторный - 250 × 120 × 88 мм, двойной - 250 × 120 × 138 мм. Чем выше кирпич, тем меньше штук нужно на квадратный метр и тем быстрее идёт кладка, но перевязка и подрезка у высоких кирпичей сложнее.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+        <a href="../kalkulyator-plintusa/">Плинтус</a>
+        <a href="../kalkulyator-kirpicha/">Кирпич</a>
+        <a href="../kalkulyator-betona/">Бетон</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  var THICK = {
+    '0.5': { mm: 120, name: 'в полкирпича' },
+    '1': { mm: 250, name: 'в один кирпич' },
+    '1.5': { mm: 380, name: 'в полтора кирпича' },
+    '2': { mm: 510, name: 'в два кирпича' }
+  };
+
+  var RATE = {
+    single: { name: 'Одинарный', perM2: { '0.5': 51, '1': 102, '1.5': 153, '2': 204 } },
+    onehalf: { name: 'Полуторный', perM2: { '0.5': 39, '1': 78, '1.5': 117, '2': 156 } },
+    double: { name: 'Двойной', perM2: { '0.5': 26, '1': 52, '1.5': 78, '2': 104 } }
+  };
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт кирпича',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина кладки', unit: 'м', value: 10, step: 0.1, min: 0.1, group: 'Стена' },
+      { key: 'visota', type: 'number', label: 'Высота кладки', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Стена' },
+      { key: 'proemy', type: 'number', label: 'Площадь проёмов', unit: 'м²', value: 4, step: 0.5, min: 0, group: 'Стена',
+        hint: 'окна и двери: их не кладут' },
+
+      { key: 'tolshchina', type: 'select', label: 'Толщина кладки', value: '1', group: 'Кладка', options: [
+        { v: '0.5', t: 'В полкирпича (120 мм)' },
+        { v: '1', t: 'В один кирпич (250 мм)' },
+        { v: '1.5', t: 'В полтора (380 мм)' },
+        { v: '2', t: 'В два (510 мм)' }
+      ]},
+      { key: 'kirpich', type: 'select', label: 'Тип кирпича', value: 'single', group: 'Кладка', options: [
+        { v: 'single', t: 'Одинарный (65 мм)' },
+        { v: 'onehalf', t: 'Полуторный (88 мм)' },
+        { v: 'double', t: 'Двойной (138 мм)' }
+      ]},
+      { key: 'zapas', type: 'select', label: 'Запас на бой', value: '7', group: 'Кладка', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '7', t: '7 %' },
+        { v: '10', t: '10 % (арки, выступы)' }
+      ]},
+
+      { key: 'price', type: 'number', label: 'Цена за штуку', unit: '₽', value: '', step: 1, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.visota <= 0) return { error: 'Укажите длину и высоту кладки больше нуля.' };
+      if (v.proemy < 0) return { error: 'Площадь проёмов не может быть отрицательной.' };
+
+      var gross = v.dlina * v.visota;
+      var area = gross - v.proemy;
+      if (area <= 0) return { error: 'Проёмы больше площади стены - проверьте значения.' };
+
+      var t = THICK[v.tolshchina];
+      var k = RATE[v.kirpich];
+      var perM2 = k.perM2[v.tolshchina];
+      var need = area * perM2;
+      var total = C.ceil(need * (1 + v.zapas / 100));
+
+      var rows = [
+        { label: 'Площадь стены', value: C.fmt(gross, 2) + ' м²' },
+        { label: 'Площадь кладки', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Толщина', value: t.mm + ' мм, ' + t.name },
+        { label: 'Кирпич', value: k.name },
+        { label: 'Расход на 1 м²', value: perM2 + ' шт' },
+        { label: 'Всего кирпича', value: C.fmt(total, 0) + ' шт', total: true }
+      ];
+
+      var formula = [
+        'Площадь = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.visota, 2) + ' − ' + C.fmt(v.proemy, 2) + ' = ' + C.fmt(area, 2) + ' м²',
+        'Кирпича = ' + C.fmt(area, 2) + ' × ' + perM2 + (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') +
+          ' = ' + C.fmt(total, 0) + ' шт'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = total * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(total, 0) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса не хватит на бой и подрезку: 5-7 % - обычная норма, а кирпич другой партии может отличаться оттенком.' });
+      }
+      notes.push({ text: 'Раствор в расчёт не входит: на 1 м² кладки уходит около 0,02-0,03 м³ смеси.' });
+      if (v.tolshchina === '0.5') {
+        notes.push({ text: 'Полкирпича - это 120 мм. Несущую стену так не кладут: это перегородка, облицовка или забор.' });
+      }
+      if (v.tolshchina === '2') {
+        notes.push({ text: 'В два кирпича (510 мм) кладут несущие стены с утеплением или без. Проверьте, не дешевле ли каркас или газобетон.' });
+      }
+
+      return {
+        main: {
+          label: 'Нужно кирпича',
+          value: C.fmt(total, 0) + ' шт',
+          sub: C.fmt(area, 2) + ' м² · ' + t.name + ' · ' + k.name.toLowerCase()
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
