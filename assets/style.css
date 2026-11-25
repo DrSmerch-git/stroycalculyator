@@ -43,7 +43,7 @@ a:hover { text-decoration: underline; }
   background: #fff;
   border-bottom: 1px solid var(--line);
   position: sticky;
-  top: 0;
+  top: -47px;
   z-index: 20;
 }
 
@@ -83,7 +83,24 @@ a:hover { text-decoration: underline; }
 .nav a[aria-current="page"] { color: var(--ink); font-weight: 600; }
 
 @media (max-width: 720px) {
-  .nav { display: none; }
+  .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 6px;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto;
+    padding: 4px 11px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    background: #fff;
+    font-size: 13px;
+  }
+  .nav a[aria-current="page"] { border-color: var(--accent); background: #f2f9f7; }
 }
 
 /* ---------- типографика ---------- */
