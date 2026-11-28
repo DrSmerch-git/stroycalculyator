@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор газоблока: сколько блоков и кубов нужно</title>
+  <meta name="description" content="Рассчитайте количество газоблоков по площади кладки и размеру блока, объём в кубах и стоимость. Калькулятор учитывает проёмы и запас на бой.">
+  <link rel="canonical" href="https://stroycalculyator.ru/kalkulyator-gazobloka/">
+  <meta name="theme-color" content="#0e7c66">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e7c66'/%3E%3Cpath d='M10 9h12M10 14h5M18 14h4M10 19h5M18 19h4' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Калькулятор газоблока">
+  <meta property="og:description" content="Блоки и кубы газобетона по площади кладки, размеру блока и запасу.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Калькулятор газоблока",
+        "url": "https://stroycalculyator.ru/kalkulyator-gazobloka/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "ru-RU",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://stroycalculyator.ru/" },
+          { "@type": "ListItem", "position": 2, "name": "Калькулятор газоблока" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Сколько газоблоков нужно на 1 м² кладки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для блока 600 × 250 мм на 1 м² нужно около 6,7 штуки, для 600 × 300 мм - 5,6, для 625 × 250 мм - 6,4. Считается как единица, делённая на площадь грани блока в метрах."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько газоблоков в кубе?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Для блока 600 × 250 × 200 мм объём одного блока - 0,03 м³, значит в кубе 33 блока. Для 600 × 250 × 300 мм объём 0,045 м³ и в кубе 22 блока. Чем толще блок, тем меньше штук в кубе."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Сколько газоблока нужно на стену 10 на 3 метра?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Площадь стены 30 м², минус проёмы 4 м² - остаётся 26 м². При блоке 600 × 250 × 200 мм это 26 × 6,7 = 174 блока, с запасом 5 % - 182 блока, или 5,46 м³."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Чем газоблок отличается от пеноблока?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Газоблок автоклавный: его пропаривают под давлением, поэтому геометрия точная и кладут его на тонкий клеевой шов 2-3 мм. Пеноблок твердеет в обычных условиях, размеры гуляют сильнее, шов толще и расход раствора выше."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__in">
+    <a class="logo" href="../">
+      <span class="logo__mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="#fff" stroke-width="1.7"/>
+          <path d="M8 9h8M8 13h3M14 13h2M8 17h3M14 17h2" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </span>
+      СтройКалькулятор
+    </a>
+    <nav class="nav" aria-label="Калькуляторы">
+      <a href="../kalkulyator-plitki/">Плитка</a>
+      <a href="../kalkulyator-kleya-dlya-plitki/">Клей для плитки</a>
+      <a href="../kalkulyator-zatirki-dlya-shvov/">Затирка</a>
+      <a href="../kalkulyator-laminata/">Ламинат</a>
+      <a href="../kalkulyator-oboev/">Обои</a>
+      <a href="../kalkulyator-kraski/">Краска</a>
+      <a href="../kalkulyator-styazhki/">Стяжка</a>
+      <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+      <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+      <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+      <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+      <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+      <a href="../kalkulyator-plintusa/">Плинтус</a>
+      <a href="../kalkulyator-kirpicha/">Кирпич</a>
+      <a href="../kalkulyator-gazobloka/" aria-current="page">Газоблок</a>
+      <a href="../kalkulyator-betona/">Бетон</a>
+      <a href="../kalkulyator-peregorodki-iz-gipsokartona/">Перегородка</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <a href="../">Главная</a><span>/</span>Калькулятор газоблока
+  </nav>
+
+  <div class="calc-head">
+    <h1>Калькулятор газоблока</h1>
+    <p class="lead">Считает штуки блоков по площади кладки за вычетом проёмов, объём в кубах и стоимость. Подходит для газоблока и пеноблока любых размеров.</p>
+  </div>
+
+  <div class="calc-layout">
+    <div class="calc-panel">
+      <div id="calc"></div>
+    </div>
+    <div class="result">
+      <div class="result-card" id="result" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <section class="section prose">
+    <h2>Как считается количество газоблока</h2>
+    <ul>
+      <li><strong>Площадь кладки</strong> = длина × высота − площадь проёмов.</li>
+      <li><strong>Блоков на 1 м²</strong> = 1 ÷ площадь грани блока в метрах.</li>
+      <li><strong>Всего блоков</strong> = площадь × блоков на 1 м² × (1 + запас), с округлением вверх.</li>
+      <li><strong>Объём</strong> = число блоков × объём одного блока.</li>
+    </ul>
+
+    <h3>Пример: стена 10 × 3 м, проёмы 4 м², блок 600 × 250 × 200 мм</h3>
+    <p>Площадь кладки 10 × 3 − 4 = 26 м². Грань блока 0,6 × 0,25 = 0,15 м², значит на 1 м² нужно 6,7 штуки. Всего 26 × 6,7 = 174 блока, с запасом 5 % - <strong>182 блока</strong>. Объём одного блока 0,03 м³, отсюда <strong>5,46 м³</strong>.</p>
+
+    <h2>Штуки и кубы: почему считают и так, и так</h2>
+    <ul>
+      <li><strong>Штуки</strong> нужны на стройке: кладку ведут поштучно, и по штукам понятно, хватит ли поддонов.</li>
+      <li><strong>Кубы</strong> нужны при покупке: газоблок продают за кубометры, а в накладной указывают и объём, и штуки.</li>
+      <li><strong>Штук в кубе</strong> = 1 ÷ объём блока. Для 600 × 250 × 200 мм это 33 блока, для 600 × 250 × 300 мм - 22.</li>
+      <li><strong>Толщина блока</strong> задаёт объём: при одной и той же площади кладки стена из блока 300 мм потребует в полтора раза больше кубов, чем из 200 мм.</li>
+    </ul>
+
+    <h3>О чём стоит помнить</h3>
+    <ul>
+      <li>Запас 5 % нужен на бой: газоблок хрупкий, углы скалываются при разгрузке и подрезке.</li>
+      <li>Клей для газоблока считают отдельно - около 25-30 кг на 1 м³ кладки. Здесь он в расчёт не входит.</li>
+      <li>Первый ряд кладут на цементный раствор по гидроизоляции, остальные - на клей, иначе стена даст неравномерную осадку.</li>
+      <li>Блок 100-150 мм годится для перегородок, 200-300 мм - для стен, 375-400 мм - для несущих стен без дополнительного утепления.</li>
+      <li>Проёмы вычитают, но над окнами и дверями нужны перемычки: их считают отдельно.</li>
+    </ul>
+
+    <p>Кирпичную кладку считают в <a href="../kalkulyator-kirpicha/">калькуляторе кирпича</a>, а раствор и бетон для фундамента - в <a href="../kalkulyator-betona/">калькуляторе бетона</a>.</p>
+  </section>
+
+  <section class="section">
+    <h2>Частые вопросы</h2>
+    <div class="faq">
+      <details>
+        <summary>Сколько газоблоков нужно на 1 м² кладки?</summary>
+        <p>Для блока 600 × 250 мм на 1 м² нужно около 6,7 штуки, для 600 × 300 мм - 5,6, для 625 × 250 мм - 6,4. Считается как единица, делённая на площадь грани блока в метрах.</p>
+      </details>
+      <details>
+        <summary>Сколько газоблоков в кубе?</summary>
+        <p>Для блока 600 × 250 × 200 мм объём одного блока - 0,03 м³, значит в кубе 33 блока. Для 600 × 250 × 300 мм объём 0,045 м³ и в кубе 22 блока. Чем толще блок, тем меньше штук в кубе.</p>
+      </details>
+      <details>
+        <summary>Сколько газоблока нужно на стену 10 на 3 метра?</summary>
+        <p>Площадь стены 30 м², минус проёмы 4 м² - остаётся 26 м². При блоке 600 × 250 × 200 мм это 26 × 6,7 = 174 блока, с запасом 5 % - 182 блока, или 5,46 м³.</p>
+      </details>
+      <details>
+        <summary>Чем газоблок отличается от пеноблока?</summary>
+        <p>Газоблок автоклавный: его пропаривают под давлением, поэтому геометрия точная и кладут его на тонкий клеевой шов 2-3 мм. Пеноблок твердеет в обычных условиях, размеры гуляют сильнее, шов толще и расход раствора выше.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__row">
+      <div>© <span id="year">2026</span> СтройКалькулятор</div>
+      <nav class="site-footer__links" aria-label="Калькуляторы в подвале">
+        <a href="../kalkulyator-plitki/">Плитка</a>
+        <a href="../kalkulyator-kleya-dlya-plitki/">Клей для плитки</a>
+        <a href="../kalkulyator-zatirki-dlya-shvov/">Затирка</a>
+        <a href="../kalkulyator-laminata/">Ламинат</a>
+        <a href="../kalkulyator-oboev/">Обои</a>
+        <a href="../kalkulyator-kraski/">Краска</a>
+        <a href="../kalkulyator-styazhki/">Стяжка</a>
+        <a href="../kalkulyator-nalivnogo-pola/">Наливной пол</a>
+        <a href="../kalkulyator-gipsokartona/">Гипсокартон</a>
+        <a href="../kalkulyator-shtukaturki/">Штукатурка</a>
+        <a href="../kalkulyator-utepleniya/">Утеплитель</a>
+        <a href="../kalkulyator-shpaklevki/">Шпаклёвка</a>
+        <a href="../kalkulyator-plintusa/">Плинтус</a>
+        <a href="../kalkulyator-kirpicha/">Кирпич</a>
+        <a href="../kalkulyator-gazobloka/">Газоблок</a>
+        <a href="../kalkulyator-betona/">Бетон</a>
+        <a href="../kalkulyator-peregorodki-iz-gipsokartona/">Перегородка</a>
+      </nav>
+    </div>
+    <p class="disclaimer"><a href="../politika-konfidencialnosti/">Политика конфиденциальности</a></p>
+    <p class="disclaimer">Расчёты носят справочный характер и не заменяют проектную документацию. Количество материала зависит от раскладки, геометрии помещения и партии товара - уточняйте у продавца перед покупкой.</p>
+  </div>
+</footer>
+
+<script src="../assets/calc.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.Calc;
+
+  C.mount(document.getElementById('calc'), {
+    title: 'Расчёт газоблока',
+    siteName: 'СтройКалькулятор',
+    resultEl: document.getElementById('result'),
+    fields: [
+      { key: 'dlina', type: 'number', label: 'Длина кладки', unit: 'м', value: 10, step: 0.1, min: 0.1, group: 'Стена' },
+      { key: 'visota', type: 'number', label: 'Высота кладки', unit: 'м', value: 3, step: 0.1, min: 0.1, group: 'Стена' },
+      { key: 'proemy', type: 'number', label: 'Площадь проёмов', unit: 'м²', value: 4, step: 0.5, min: 0, group: 'Стена',
+        hint: 'окна и двери: их не кладут' },
+
+      { key: 'blok_dlina', type: 'number', label: 'Длина блока', unit: 'мм', value: 600, step: 5, min: 50, group: 'Блок',
+        hint: 'стандарт 600 или 625 мм' },
+      { key: 'blok_visota', type: 'number', label: 'Высота блока', unit: 'мм', value: 250, step: 5, min: 50, group: 'Блок',
+        hint: 'стандарт 200, 250 или 300 мм' },
+      { key: 'blok_tolshchina', type: 'number', label: 'Толщина блока', unit: 'мм', value: 200, step: 5, min: 50, group: 'Блок',
+        hint: '100-150 перегородка, 200-300 стена, 375-400 несущая' },
+
+      { key: 'zapas', type: 'select', label: 'Запас на бой', value: '5', group: 'Расчёт', options: [
+        { v: '0', t: 'Без запаса' },
+        { v: '5', t: '5 %' },
+        { v: '7', t: '7 %' },
+        { v: '10', t: '10 % (много подрезки)' }
+      ]},
+      { key: 'price', type: 'number', label: 'Цена за куб', unit: '₽', value: '', step: 100, min: 0, group: 'Покупка (необязательно)',
+        hint: 'оставьте пустым, если стоимость не нужна' }
+    ],
+
+    compute: function (v) {
+      if (v.dlina <= 0 || v.visota <= 0) return { error: 'Укажите длину и высоту кладки больше нуля.' };
+      if (v.blok_dlina <= 0 || v.blok_visota <= 0 || v.blok_tolshchina <= 0) return { error: 'Укажите размеры блока больше нуля.' };
+      if (v.proemy < 0) return { error: 'Площадь проёмов не может быть отрицательной.' };
+
+      var gross = v.dlina * v.visota;
+      var area = gross - v.proemy;
+      if (area <= 0) return { error: 'Проёмы больше площади стены - проверьте значения.' };
+
+      var face = (v.blok_dlina * v.blok_visota) / 1000000;
+      var perM2 = 1 / face;
+      var total = C.ceil(area * perM2 * (1 + v.zapas / 100));
+      var blockVolume = (v.blok_dlina * v.blok_visota * v.blok_tolshchina) / 1000000000;
+      var volume = total * blockVolume;
+      var perM3 = 1 / blockVolume;
+
+      var rows = [
+        { label: 'Площадь стены', value: C.fmt(gross, 2) + ' м²' },
+        { label: 'Площадь кладки', value: C.fmt(area, 2) + ' м²' },
+        { label: 'Грань блока', value: C.fmt(face, 3) + ' м²' },
+        { label: 'Блоков на 1 м²', value: C.fmt(perM2, 2) + ' шт' },
+        { label: 'Всего блоков', value: C.fmt(total, 0) + ' шт', total: true },
+        { label: 'Объём', value: C.fmt(volume, 2) + ' м³' },
+        { label: 'Блоков в кубе', value: C.fmt(perM3, 0) + ' шт' }
+      ];
+
+      var formula = [
+        'Площадь = ' + C.fmt(v.dlina, 2) + ' × ' + C.fmt(v.visota, 2) + ' − ' + C.fmt(v.proemy, 1) + ' = ' + C.fmt(area, 2) + ' м²',
+        'Блоков на 1 м² = 1 ÷ (' + C.fmt(v.blok_dlina / 1000, 3) + ' × ' + C.fmt(v.blok_visota / 1000, 3) + ') = ' + C.fmt(perM2, 2) + ' шт',
+        'Блоков = ' + C.fmt(area, 2) + ' × ' + C.fmt(perM2, 2) + (v.zapas > 0 ? ' × ' + C.fmt(1 + v.zapas / 100, 2) : '') + ' = ' + C.fmt(total, 0) + ' шт',
+        'Объём = ' + C.fmt(total, 0) + ' × ' + C.fmt(blockVolume, 3) + ' = ' + C.fmt(volume, 2) + ' м³'
+      ];
+
+      var cost = 0;
+      if (v.price > 0) {
+        cost = volume * v.price;
+        rows.push({ label: 'Стоимость', value: C.money(cost), total: true });
+        formula.push('Стоимость = ' + C.fmt(volume, 2) + ' × ' + C.fmt(v.price, 0) + ' = ' + C.money(cost));
+      }
+
+      var notes = [];
+      if (v.zapas === '0') {
+        notes.push({ text: 'Без запаса не хватит на бой: газоблок скалывается при разгрузке и подрезке, 5 % - обычная норма.' });
+      }
+      if (v.blok_tolshchina <= 150) {
+        notes.push({ text: 'Блок 100-150 мм - это перегородка. Для несущей стены нужна толщина от 300 мм или утепление.' });
+      }
+      notes.push({ text: 'Клей для газоблока в расчёт не входит: его уходит около 25-30 кг на 1 м³ кладки.' });
+      notes.push({ text: 'Первый ряд кладут на цементный раствор по гидроизоляции, остальные - на тонкий клей 2-3 мм.' });
+
+      return {
+        main: {
+          label: 'Нужно газоблока',
+          value: C.fmt(total, 0) + ' ' + C.plural(total, 'блок', 'блока', 'блоков'),
+          sub: C.fmt(volume, 2) + ' м³ · ' + C.fmt(area, 2) + ' м² · ' + C.fmt(perM2, 1) + ' шт на 1 м²'
+        },
+        rows: rows,
+        formula: formula,
+        notes: notes
+      };
+    }
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+<!-- Яндекс.Метрика -->
+<script>
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();
+  for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  ym(114374906, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true});
+</script>
+</body>
+</html>
